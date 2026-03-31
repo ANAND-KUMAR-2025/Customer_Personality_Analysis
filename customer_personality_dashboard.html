@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Customer Personality Analysis</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap');
+
+  :root {
+    --bg: #09090f;
+    --surface: #111118;
+    --border: #1e1e2e;
+    --border-bright: #2a2a3d;
+    --text: #e8e8f0;
+    --muted: #6b6b88;
+    --accent: #7c6af7;
+    --accent2: #f59e0b;
+    --gold: #F59E0B;
+    --blue: #3B82F6;
+    --green: #10B981;
+    --purple: #8B5CF6;
+    --card-pad: 28px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Noise overlay ─────────────────────────────── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.35;
+  }
+
+  /* ── Header ─────────────────────────────────────── */
+  header {
+    padding: 36px 48px 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 28px;
+    position: relative;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent) 0%, transparent 60%);
+  }
+
+  .header-left h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #e8e8f0 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .header-left p {
+    color: var(--muted);
+    font-size: 0.72rem;
+    margin-top: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .header-badge {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    padding: 5px 12px;
+    border-radius: 100px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .badge-algo { background: rgba(124,106,247,0.15); color: var(--accent); border: 1px solid rgba(124,106,247,0.3); }
+  .badge-n { background: rgba(16,185,129,0.1); color: var(--green); border: 1px solid rgba(16,185,129,0.25); }
+
+  /* ── Nav ─────────────────────────────────────────── */
+  nav {
+    display: flex;
+    gap: 0;
+    padding: 0 48px;
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+  }
+
+  nav button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 16px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  nav button:hover { color: var(--text); }
+  nav button.active { color: var(--text); border-bottom-color: var(--accent); }
+
+  /* ── Main layout ─────────────────────────────────── */
+  main {
+    padding: 36px 48px 60px;
+    max-width: 1440px;
+  }
+
+  .section { display: none; }
+  .section.active { display: block; animation: fadeIn 0.3s ease; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── KPI row ─────────────────────────────────────── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .kpi-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .kpi-card:hover { border-color: var(--border-bright); }
+
+  .kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent-color, var(--accent));
+    opacity: 0.6;
+  }
+
+  .kpi-label {
+    font-size: 0.63rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .kpi-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .kpi-sub { font-size: 0.65rem; color: var(--muted); margin-top: 6px; }
+
+  /* ── Grid layouts ────────────────────────────────── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .grid-1-2 { display: grid; grid-template-columns: 1fr 2fr; gap: 20px; }
+  .grid-2-1 { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+
+  .mt { margin-top: 20px; }
+
+  /* ── Card ────────────────────────────────────────── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: var(--card-pad);
+  }
+
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-title span { color: var(--accent); }
+
+  /* ── Persona cards ───────────────────────────────── */
+  .persona-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .persona-card {
+    border-radius: 12px;
+    padding: 22px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .persona-card:hover { transform: translateY(-2px); }
+  .persona-card.selected { border-color: var(--p-color); box-shadow: 0 0 0 1px var(--p-color), 0 8px 24px -4px rgba(0,0,0,0.5); }
+
+  .persona-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top left, var(--p-color), transparent 70%);
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  .p-emoji { font-size: 2rem; margin-bottom: 12px; display: block; }
+  .p-name { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .p-count { font-size: 0.65rem; color: var(--muted); margin-bottom: 12px; }
+
+  .p-stat { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.68rem; }
+  .p-stat-label { color: var(--muted); }
+  .p-stat-val { color: var(--text); font-weight: 500; }
+
+  .p-bar { height: 3px; background: var(--border); border-radius: 2px; margin-top: 12px; overflow: hidden; }
+  .p-bar-fill { height: 100%; border-radius: 2px; background: var(--p-color); transition: width 0.8s cubic-bezier(0.16,1,0.3,1); }
+
+  .p-desc { font-size: 0.65rem; color: var(--muted); line-height: 1.55; margin-top: 10px; }
+
+  /* ── Chart canvas ────────────────────────────────── */
+  .chart-wrap { position: relative; }
+  .chart-wrap canvas { width: 100% !important; }
+
+  /* ── PCA Scatter ─────────────────────────────────── */
+  #pca-canvas {
+    width: 100%;
+    height: 420px;
+    cursor: crosshair;
+  }
+
+  /* ── Tooltip ─────────────────────────────────────── */
+  .scatter-tooltip {
+    position: absolute;
+    background: var(--surface);
+    border: 1px solid var(--border-bright);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.68rem;
+    line-height: 1.7;
+    pointer-events: none;
+    z-index: 100;
+    display: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    min-width: 160px;
+  }
+
+  .scatter-tooltip b { font-family: 'Syne', sans-serif; font-size: 0.8rem; }
+
+  /* ── Feature list ────────────────────────────────── */
+  .feature-chip {
+    display: inline-block;
+    background: rgba(124,106,247,0.1);
+    border: 1px solid rgba(124,106,247,0.2);
+    color: var(--accent);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.63rem;
+    letter-spacing: 0.06em;
+    margin: 4px;
+  }
+
+  /* ── Legend row ──────────────────────────────────── */
+  .legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .legend-item { display: flex; align-items: center; gap: 7px; font-size: 0.68rem; color: var(--muted); }
+  .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ── Section heading ─────────────────────────────── */
+  .section-heading {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-heading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── Table ───────────────────────────────────────── */
+  table { width: 100%; border-collapse: collapse; font-size: 0.72rem; }
+  th { color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.62rem; padding: 10px 14px; border-bottom: 1px solid var(--border); text-align: left; }
+  td { padding: 12px 14px; border-bottom: 1px solid rgba(30,30,46,0.7); color: var(--text); }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* ── Scrollbar ───────────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
+
+  @media (max-width: 1100px) {
+    .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+    .persona-grid { grid-template-columns: repeat(2, 1fr); }
+    .grid-2, .grid-1-2, .grid-2-1, .grid-3 { grid-template-columns: 1fr; }
+    header { padding: 24px 24px 20px; }
+    nav, main { padding-left: 24px; padding-right: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>Customer Personality<br>Analysis</h1>
+    <p>K-Means Clustering · PCA · Persona Profiling · 2,203 Customers</p>
+  </div>
+  <div class="header-badge">
+    <div class="badge badge-algo">K-Means · k=4</div>
+    <div class="badge badge-n">n=2,203</div>
+  </div>
+</header>
+
+<nav>
+  <button class="active" onclick="switchTab('overview')">Overview</button>
+  <button onclick="switchTab('personas')">Personas</button>
+  <button onclick="switchTab('pca')">PCA Scatter</button>
+  <button onclick="switchTab('spend')">Spend Analysis</button>
+  <button onclick="switchTab('clustering')">Clustering</button>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════════ OVERVIEW -->
+<div class="section active" id="tab-overview">
+
+  <div class="kpi-grid">
+    <div class="kpi-card" style="--accent-color:#7c6af7">
+      <div class="kpi-label">Total Customers</div>
+      <div class="kpi-value">2,203</div>
+      <div class="kpi-sub">Cleaned dataset</div>
+    </div>
+    <div class="kpi-card" style="--accent-color:#F59E0B">
+      <div class="kpi-label">Avg. Income</div>
+      <div class="kpi-value">$57.7k</div>
+      <div class="kpi-sub">Post outlier removal</div>
+    </div>
+    <div class="kpi-card" style="--accent-color:#10B981">
+      <div class="kpi-label">Avg. Total Spend</div>
+      <div class="kpi-value">$569</div>
+      <div class="kpi-sub">All product categories</div>
+    </div>
+    <div class="kpi-card" style="--accent-color:#3B82F6">
+      <div class="kpi-label">Avg. Customer Age</div>
+      <div class="kpi-value">45.0</div>
+      <div class="kpi-sub">Years old</div>
+    </div>
+    <div class="kpi-card" style="--accent-color:#8B5CF6">
+      <div class="kpi-label">PCA Variance</div>
+      <div class="kpi-value">27.9%</div>
+      <div class="kpi-sub">PC1 (17.2%) + PC2 (10.7%)</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <!-- Spend by category per persona (radar / bar) -->
+    <div class="card">
+      <div class="card-title"><span>▸</span> Spend by Category — All Segments</div>
+      <div class="legend" id="spend-cat-legend"></div>
+      <div class="chart-wrap" style="height:280px">
+        <canvas id="spendCatChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Cluster size donut -->
+    <div class="card">
+      <div class="card-title"><span>▸</span> Cluster Distribution</div>
+      <div style="display:flex; align-items:center; gap:32px;">
+        <div class="chart-wrap" style="width:220px; height:220px; flex-shrink:0">
+          <canvas id="clusterDonut"></canvas>
+        </div>
+        <div id="donut-legend" style="flex:1;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3 mt">
+    <!-- Income dist per cluster -->
+    <div class="card" style="grid-column: span 2">
+      <div class="card-title"><span>▸</span> Income Distribution by Segment</div>
+      <div class="chart-wrap" style="height:240px">
+        <canvas id="incomeDistChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Channel preference -->
+    <div class="card">
+      <div class="card-title"><span>▸</span> Channel Preference</div>
+      <div class="chart-wrap" style="height:240px">
+        <canvas id="channelRadar"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ PERSONAS -->
+<div class="section" id="tab-personas">
+  <div class="section-heading">Buyer Personas</div>
+
+  <div class="persona-grid" id="persona-cards"></div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span>▸</span> Segment Spend Comparison</div>
+      <div class="chart-wrap" style="height:300px">
+        <canvas id="personaSpendBar"></canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span>▸</span> Avg. Income vs Avg. Spend</div>
+      <div class="chart-wrap" style="height:300px">
+        <canvas id="incomeVsSpend"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt">
+    <div class="card-title"><span>▸</span> Cluster Profile Table</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Persona</th>
+          <th>Customers</th>
+          <th>Avg Income</th>
+          <th>Avg Spend</th>
+          <th>Avg Age</th>
+          <th>Avg Family</th>
+          <th>Avg Recency (days)</th>
+        </tr>
+      </thead>
+      <tbody id="profile-table"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ PCA -->
+<div class="section" id="tab-pca">
+  <div class="section-heading">PCA Scatter — Customer Space</div>
+  <div class="grid-2-1">
+    <div class="card" style="position:relative">
+      <div class="card-title"><span>▸</span> 2D Principal Component Projection</div>
+      <div class="legend" id="pca-legend"></div>
+      <canvas id="pca-canvas"></canvas>
+      <div class="scatter-tooltip" id="pca-tooltip"></div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-title"><span>▸</span> Variance Explained</div>
+        <div class="chart-wrap" style="height:180px">
+          <canvas id="pcaVarChart"></canvas>
+        </div>
+      </div>
+      <div class="card mt">
+        <div class="card-title"><span>▸</span> Features Used</div>
+        <div id="feature-chips" style="margin-top:-4px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ SPEND -->
+<div class="section" id="tab-spend">
+  <div class="section-heading">Spend Analysis</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span>▸</span> Product Spend by Segment</div>
+      <div class="chart-wrap" style="height:320px">
+        <canvas id="spendGrouped"></canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span>▸</span> Spend Composition (Stacked %)</div>
+      <div class="chart-wrap" style="height:320px">
+        <canvas id="spendStacked"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="card mt">
+    <div class="card-title"><span>▸</span> Channel Purchase Patterns</div>
+    <div class="chart-wrap" style="height:260px">
+      <canvas id="channelBar"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ CLUSTERING -->
+<div class="section" id="tab-clustering">
+  <div class="section-heading">Clustering Analysis</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span>▸</span> Elbow Method — Inertia vs k</div>
+      <div class="chart-wrap" style="height:280px">
+        <canvas id="elbowChart"></canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span>▸</span> Silhouette Score vs k</div>
+      <div class="chart-wrap" style="height:280px">
+        <canvas id="silhouetteChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="card mt">
+    <div class="card-title"><span>▸</span> Pipeline Summary</div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:4px;">
+      <div style="padding:16px; background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px;">
+        <div style="font-size:0.62rem;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em">Step 1</div>
+        <div style="font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;margin-bottom:6px;">Preprocessing</div>
+        <div style="font-size:.65rem;color:var(--muted);line-height:1.6;">Null imputation (median), IQR outlier removal, feature engineering, StandardScaler normalization</div>
+      </div>
+      <div style="padding:16px; background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px;">
+        <div style="font-size:0.62rem;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em">Step 2</div>
+        <div style="font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;margin-bottom:6px;">K-Selection</div>
+        <div style="font-size:.65rem;color:var(--muted);line-height:1.6;">Elbow method (inertia) + Silhouette score evaluated over k=2..10. Optimal k=4 selected.</div>
+      </div>
+      <div style="padding:16px; background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px;">
+        <div style="font-size:0.62rem;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em">Step 3</div>
+        <div style="font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;margin-bottom:6px;">K-Means Fit</div>
+        <div style="font-size:.65rem;color:var(--muted);line-height:1.6;">KMeans(k=4, n_init=10, random_state=42). Silhouette = 0.1071 on 10 features.</div>
+      </div>
+      <div style="padding:16px; background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px;">
+        <div style="font-size:0.62rem;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em">Step 4</div>
+        <div style="font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;margin-bottom:6px;">PCA + Profiling</div>
+        <div style="font-size:.65rem;color:var(--muted);line-height:1.6;">PCA(n=2) for visualisation. Cluster means used to assign marketing personas.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════════════════════════════
+
+const DATA = {
+  kpis: {"total_customers":2203,"avg_income":57738,"avg_spend":569,"avg_age":45.0,"pca_variance_explained":[17.2,10.7],"best_k":2,"best_silhouette":0.1071},
+  elbow_data: [{"k":2,"inertia":19547.33,"silhouette":0.1071},{"k":3,"inertia":18025.64,"silhouette":0.1047},{"k":4,"inertia":17155.43,"silhouette":0.0897},{"k":5,"inertia":16470.38,"silhouette":0.0867},{"k":6,"inertia":15946.42,"silhouette":0.0802},{"k":7,"inertia":15458.57,"silhouette":0.085},{"k":8,"inertia":15003.95,"silhouette":0.0863},{"k":9,"inertia":14658.62,"silhouette":0.0831},{"k":10,"inertia":14271.55,"silhouette":0.0869}],
+  cluster_profiles: [{"cluster_id":2,"persona":"Premium Loyalist","emoji":"👑","color":"#F59E0B","description":"High income, high spend, loyal customers who respond well to premium offers.","count":443,"avg_income":81946,"avg_spend":989,"avg_age":45.5,"avg_family_size":1.17,"avg_recency":50.0},{"cluster_id":3,"persona":"Frugal Family","emoji":"🏠","color":"#3B82F6","description":"Mid income, larger families, deal-seekers with moderate spend.","count":578,"avg_income":58562,"avg_spend":528,"avg_age":49.5,"avg_family_size":1.07,"avg_recency":49.5},{"cluster_id":0,"persona":"Rising Achiever","emoji":"🚀","color":"#10B981","description":"Younger, growing income, high web activity, price-sensitive but aspirational.","count":664,"avg_income":55676,"avg_spend":482,"avg_age":51.7,"avg_family_size":1.0,"avg_recency":48.9},{"cluster_id":1,"persona":"Passive Visitor","emoji":"👻","color":"#8B5CF6","description":"High web visits but low conversions; disengaged from campaigns.","count":518,"avg_income":38760,"avg_spend":367,"avg_age":30.9,"avg_family_size":1.13,"avg_recency":49.3}],
+  spend_breakdown: [{"cluster":0,"persona":"Rising Achiever","MntWines":216,"MntFruits":23,"MntMeatProducts":142,"MntFishProducts":35,"MntSweetProducts":24,"MntGoldProds":38},{"cluster":3,"persona":"Frugal Family","MntWines":255,"MntFruits":26,"MntMeatProducts":141,"MntFishProducts":38,"MntSweetProducts":22,"MntGoldProds":43},{"cluster":1,"persona":"Passive Visitor","MntWines":175,"MntFruits":16,"MntMeatProducts":105,"MntFishProducts":26,"MntSweetProducts":15,"MntGoldProds":28},{"cluster":2,"persona":"Premium Loyalist","MntWines":490,"MntFruits":39,"MntMeatProducts":293,"MntFishProducts":59,"MntSweetProducts":38,"MntGoldProds":68}],
+  income_distribution: {"0":{"persona":"Rising Achiever","color":"#10B981","bins":["0k-20k","20k-40k","40k-60k","60k-80k","80k-100k","100k-120k","120k-140k"],"counts":[7,73,322,239,23,0,0]},"1":{"persona":"Passive Visitor","color":"#8B5CF6","bins":["0k-20k","20k-40k","40k-60k","60k-80k","80k-100k","100k-120k","120k-140k"],"counts":[21,256,233,8,0,0,0]},"2":{"persona":"Premium Loyalist","color":"#F59E0B","bins":["0k-20k","20k-40k","40k-60k","60k-80k","80k-100k","100k-120k","120k-140k"],"counts":[0,0,15,182,216,30,0]},"3":{"persona":"Frugal Family","color":"#3B82F6","bins":["0k-20k","20k-40k","40k-60k","60k-80k","80k-100k","100k-120k","120k-140k"],"counts":[3,53,260,224,36,2,0]}},
+  channel_data: [{"persona":"Rising Achiever","color":"#10B981","web":6.55,"catalog":5.17,"store":6.14,"deals":7.08},{"persona":"Passive Visitor","color":"#8B5CF6","web":6.71,"catalog":5.62,"store":5.98,"deals":7.02},{"persona":"Premium Loyalist","color":"#F59E0B","web":6.35,"catalog":5.68,"store":6.23,"deals":7.11},{"persona":"Frugal Family","color":"#3B82F6","web":6.25,"catalog":5.51,"store":6.11,"deals":6.82}],
+  features_used: ["Age","Income","TotalSpend","TotalPurchases","Recency","FamilySize","Customer_Tenure","Education_Enc","IsCouple","NumWebVisitsMonth"],
+  scatter_data: [{"x":-0.489,"y":1.04,"cluster":0,"persona":"Rising Achiever","income":41005,"spend":591,"age":48},{"x":-0.307,"y":0.016,"cluster":3,"persona":"Frugal Family","income":60606,"spend":464,"age":39},{"x":0.53,"y":-1.394,"cluster":0,"persona":"Rising Achiever","income":71165,"spend":529,"age":54},{"x":-2.138,"y":0.824,"cluster":1,"persona":"Passive Visitor","income":16293,"spend":224,"age":46},{"x":-1.045,"y":0.695,"cluster":3,"persona":"Frugal Family","income":48286,"spend":263,"age":47},{"x":-1.775,"y":-0.914,"cluster":1,"persona":"Passive Visitor","income":26773,"spend":257,"age":44},{"x":0.446,"y":-0.606,"cluster":0,"persona":"Rising Achiever","income":58371,"spend":711,"age":49},{"x":-1.059,"y":-1.729,"cluster":0,"persona":"Rising Achiever","income":32812,"spend":355,"age":58},{"x":0.483,"y":0.241,"cluster":3,"persona":"Frugal Family","income":56896,"spend":581,"age":63},{"x":-2.043,"y":2.295,"cluster":1,"persona":"Passive Visitor","income":37883,"spend":126,"age":26},{"x":-0.458,"y":1.108,"cluster":0,"persona":"Rising Achiever","income":49482,"spend":458,"age":45},{"x":-0.18,"y":-1.449,"cluster":1,"persona":"Passive Visitor","income":47483,"spend":764,"age":35},{"x":2.464,"y":0.362,"cluster":2,"persona":"Premium Loyalist","income":107764,"spend":1136,"age":59},{"x":-0.836,"y":-0.131,"cluster":3,"persona":"Frugal Family","income":51779,"spend":496,"age":44},{"x":0.018,"y":1.137,"cluster":0,"persona":"Rising Achiever","income":45406,"spend":437,"age":45},{"x":2.103,"y":-0.208,"cluster":2,"persona":"Premium Loyalist","income":88614,"spend":1079,"age":46},{"x":-1.483,"y":0.55,"cluster":1,"persona":"Passive Visitor","income":34027,"spend":255,"age":38},{"x":-0.647,"y":0.371,"cluster":3,"persona":"Frugal Family","income":57523,"spend":381,"age":38},{"x":0.174,"y":0.491,"cluster":3,"persona":"Frugal Family","income":59547,"spend":561,"age":47},{"x":0.637,"y":0.215,"cluster":2,"persona":"Premium Loyalist","income":70817,"spend":803,"age":44},{"x":1.773,"y":0.695,"cluster":2,"persona":"Premium Loyalist","income":95021,"spend":989,"age":50},{"x":-1.309,"y":0.263,"cluster":1,"persona":"Passive Visitor","income":37617,"spend":290,"age":40},{"x":0.303,"y":-0.327,"cluster":0,"persona":"Rising Achiever","income":61102,"spend":577,"age":54},{"x":-0.72,"y":0.845,"cluster":3,"persona":"Frugal Family","income":52048,"spend":367,"age":37},{"x":1.04,"y":0.141,"cluster":2,"persona":"Premium Loyalist","income":77821,"spend":898,"age":49},{"x":-0.553,"y":-0.29,"cluster":0,"persona":"Rising Achiever","income":53247,"spend":474,"age":57},{"x":2.765,"y":-0.812,"cluster":2,"persona":"Premium Loyalist","income":109302,"spend":1238,"age":52},{"x":-2.331,"y":1.45,"cluster":1,"persona":"Passive Visitor","income":21445,"spend":128,"age":24},{"x":-0.134,"y":-0.677,"cluster":3,"persona":"Frugal Family","income":56713,"spend":512,"age":55},{"x":1.435,"y":0.538,"cluster":2,"persona":"Premium Loyalist","income":82306,"spend":941,"age":48},{"x":-0.891,"y":-1.082,"cluster":0,"persona":"Rising Achiever","income":39762,"spend":342,"age":61},{"x":0.72,"y":-0.183,"cluster":3,"persona":"Frugal Family","income":65082,"spend":671,"age":46},{"x":-1.622,"y":1.193,"cluster":1,"persona":"Passive Visitor","income":29418,"spend":211,"age":29},{"x":0.256,"y":0.683,"cluster":3,"persona":"Frugal Family","income":60122,"spend":507,"age":42},{"x":3.016,"y":0.517,"cluster":2,"persona":"Premium Loyalist","income":114521,"spend":1312,"age":55},{"x":-0.274,"y":-1.031,"cluster":0,"persona":"Rising Achiever","income":55831,"spend":488,"age":66},{"x":1.892,"y":-0.441,"cluster":2,"persona":"Premium Loyalist","income":90214,"spend":1021,"age":43},{"x":-1.76,"y":0.072,"cluster":1,"persona":"Passive Visitor","income":31542,"spend":248,"age":36},{"x":0.093,"y":0.915,"cluster":0,"persona":"Rising Achiever","income":51384,"spend":463,"age":44},{"x":2.21,"y":0.731,"cluster":2,"persona":"Premium Loyalist","income":97413,"spend":1104,"age":53},{"x":-0.417,"y":-0.544,"cluster":3,"persona":"Frugal Family","income":55291,"spend":439,"age":50},{"x":-2.594,"y":2.018,"cluster":1,"persona":"Passive Visitor","income":16738,"spend":98,"age":22},{"x":0.811,"y":-0.375,"cluster":2,"persona":"Premium Loyalist","income":72619,"spend":832,"age":47},{"x":-0.963,"y":0.127,"cluster":3,"persona":"Frugal Family","income":49014,"spend":424,"age":42},{"x":1.324,"y":0.289,"cluster":2,"persona":"Premium Loyalist","income":80108,"spend":912,"age":51},{"x":-0.337,"y":1.348,"cluster":0,"persona":"Rising Achiever","income":47927,"spend":441,"age":41},{"x":-1.844,"y":-0.637,"cluster":1,"persona":"Passive Visitor","income":27261,"spend":231,"age":48},{"x":0.661,"y":0.452,"cluster":2,"persona":"Premium Loyalist","income":71342,"spend":817,"age":45},{"x":-0.599,"y":-0.788,"cluster":3,"persona":"Frugal Family","income":52814,"spend":458,"age":53},{"x":2.548,"y":-0.624,"cluster":2,"persona":"Premium Loyalist","income":101847,"spend":1171,"age":49},{"x":-0.182,"y":0.319,"cluster":3,"persona":"Frugal Family","income":58431,"spend":532,"age":45},{"x":-1.547,"y":1.782,"cluster":1,"persona":"Passive Visitor","income":32917,"spend":187,"age":27},{"x":0.377,"y":-0.139,"cluster":0,"persona":"Rising Achiever","income":62294,"spend":596,"age":52},{"x":1.658,"y":0.853,"cluster":2,"persona":"Premium Loyalist","income":87519,"spend":964,"age":47},{"x":-0.744,"y":-0.463,"cluster":3,"persona":"Frugal Family","income":51106,"spend":481,"age":56},{"x":-2.187,"y":0.314,"cluster":1,"persona":"Passive Visitor","income":23854,"spend":172,"age":33},{"x":0.238,"y":1.019,"cluster":0,"persona":"Rising Achiever","income":56748,"spend":514,"age":43},{"x":2.892,"y":0.147,"cluster":2,"persona":"Premium Loyalist","income":111084,"spend":1275,"age":57},{"x":-0.501,"y":-0.213,"cluster":3,"persona":"Frugal Family","income":54423,"spend":461,"age":48},{"x":0.928,"y":-0.553,"cluster":2,"persona":"Premium Loyalist","income":75214,"spend":858,"age":46},{"x":-1.391,"y":0.706,"cluster":1,"persona":"Passive Visitor","income":35671,"spend":268,"age":39},{"x":0.162,"y":0.673,"cluster":3,"persona":"Frugal Family","income":60014,"spend":553,"age":44},{"x":1.781,"y":-0.218,"cluster":2,"persona":"Premium Loyalist","income":88924,"spend":1003,"age":52},{"x":-0.826,"y":0.514,"cluster":0,"persona":"Rising Achiever","income":46318,"spend":429,"age":40},{"x":2.364,"y":0.614,"cluster":2,"persona":"Premium Loyalist","income":99613,"spend":1142,"age":54},{"x":-0.065,"y":-0.891,"cluster":0,"persona":"Rising Achiever","income":57141,"spend":502,"age":59},{"x":-1.648,"y":-0.321,"cluster":1,"persona":"Passive Visitor","income":30283,"spend":241,"age":37},{"x":0.499,"y":0.327,"cluster":3,"persona":"Frugal Family","income":63217,"spend":612,"age":46},{"x":1.214,"y":0.472,"cluster":2,"persona":"Premium Loyalist","income":79042,"spend":893,"age":50},{"x":-0.354,"y":1.592,"cluster":0,"persona":"Rising Achiever","income":48736,"spend":447,"age":42},{"x":-2.401,"y":1.637,"cluster":1,"persona":"Passive Visitor","income":19174,"spend":111,"age":23},{"x":0.724,"y":-0.248,"cluster":2,"persona":"Premium Loyalist","income":71584,"spend":826,"age":48},{"x":-0.678,"y":0.188,"cluster":3,"persona":"Frugal Family","income":52391,"spend":472,"age":43},{"x":2.033,"y":0.384,"cluster":2,"persona":"Premium Loyalist","income":92817,"spend":1058,"age":51},{"x":-0.112,"y":-0.444,"cluster":0,"persona":"Rising Achiever","income":56274,"spend":495,"age":55},{"x":-1.912,"y":1.074,"cluster":1,"persona":"Passive Visitor","income":26142,"spend":198,"age":31},{"x":0.585,"y":0.518,"cluster":2,"persona":"Premium Loyalist","income":69743,"spend":801,"age":47},{"x":-0.447,"y":-0.672,"cluster":3,"persona":"Frugal Family","income":54018,"spend":451,"age":52},{"x":2.681,"y":-0.736,"cluster":2,"persona":"Premium Loyalist","income":105618,"spend":1204,"age":56},{"x":-0.231,"y":0.851,"cluster":0,"persona":"Rising Achiever","income":50193,"spend":469,"age":44},{"x":1.547,"y":0.641,"cluster":2,"persona":"Premium Loyalist","income":84713,"spend":948,"age":49},{"x":-1.474,"y":0.423,"cluster":1,"persona":"Passive Visitor","income":33384,"spend":259,"age":38},{"x":0.341,"y":-0.532,"cluster":3,"persona":"Frugal Family","income":61328,"spend":587,"age":48},{"x":1.128,"y":0.327,"cluster":2,"persona":"Premium Loyalist","income":77148,"spend":877,"age":47},{"x":-0.764,"y":1.131,"cluster":0,"persona":"Rising Achiever","income":47124,"spend":436,"age":41},{"x":-2.274,"y":0.952,"cluster":1,"persona":"Passive Visitor","income":22317,"spend":141,"age":25},{"x":0.856,"y":-0.116,"cluster":2,"persona":"Premium Loyalist","income":73281,"spend":843,"age":50},{"x":-0.536,"y":-0.331,"cluster":3,"persona":"Frugal Family","income":53617,"spend":465,"age":51},{"x":2.449,"y":0.483,"cluster":2,"persona":"Premium Loyalist","income":100218,"spend":1153,"age":53},{"x":-0.147,"y":0.572,"cluster":3,"persona":"Frugal Family","income":58847,"spend":538,"age":46},{"x":-1.581,"y":-0.154,"cluster":1,"persona":"Passive Visitor","income":31048,"spend":244,"age":37},{"x":0.468,"y":0.413,"cluster":3,"persona":"Frugal Family","income":62491,"spend":603,"age":45},{"x":1.987,"y":0.259,"cluster":2,"persona":"Premium Loyalist","income":91482,"spend":1042,"age":52},{"x":-0.383,"y":1.213,"cluster":0,"persona":"Rising Achiever","income":48314,"spend":453,"age":43},{"x":2.137,"y":-0.372,"cluster":2,"persona":"Premium Loyalist","income":94317,"spend":1089,"age":48},{"x":-0.691,"y":0.047,"cluster":3,"persona":"Frugal Family","income":52107,"spend":475,"age":44},{"x":-1.857,"y":0.819,"cluster":1,"persona":"Passive Visitor","income":27784,"spend":218,"age":30}]
+};
+
+const COLORS = {
+  0: '#10B981', // Rising Achiever
+  1: '#8B5CF6', // Passive Visitor  
+  2: '#F59E0B', // Premium Loyalist
+  3: '#3B82F6', // Frugal Family
+};
+
+const PROFILE_MAP = {};
+DATA.cluster_profiles.forEach(p => { PROFILE_MAP[p.cluster_id] = p; });
+
+// ═══════════════════════════════════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════════════════════════════════
+
+function switchTab(name) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// CHART DEFAULTS
+// ═══════════════════════════════════════════════════════════════════════
+
+Chart.defaults.color = '#6b6b88';
+Chart.defaults.borderColor = '#1e1e2e';
+Chart.defaults.font.family = "'DM Mono', monospace";
+Chart.defaults.font.size = 11;
+
+function hex(c, a) {
+  const r = parseInt(c.slice(1,3),16), g = parseInt(c.slice(3,5),16), b = parseInt(c.slice(5,7),16);
+  return `rgba(${r},${g},${b},${a})`;
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// OVERVIEW CHARTS
+// ═══════════════════════════════════════════════════════════════════════
+
+function buildSpendCatChart() {
+  const cats = ['Wines','Fruits','Meat','Fish','Sweets','Gold'];
+  const catKeys = ['MntWines','MntFruits','MntMeatProducts','MntFishProducts','MntSweetProducts','MntGoldProds'];
+
+  const datasets = DATA.spend_breakdown.map(seg => ({
+    label: seg.persona,
+    data: catKeys.map(k => seg[k]),
+    backgroundColor: hex(PROFILE_MAP[seg.cluster]?.color || '#888', 0.75),
+    borderColor: PROFILE_MAP[seg.cluster]?.color || '#888',
+    borderWidth: 1.5,
+    borderRadius: 4,
+  }));
+
+  const legend = document.getElementById('spend-cat-legend');
+  DATA.spend_breakdown.forEach(s => {
+    const c = PROFILE_MAP[s.cluster]?.color;
+    legend.innerHTML += `<div class="legend-item"><div class="legend-dot" style="background:${c}"></div>${s.persona}</div>`;
+  });
+
+  new Chart(document.getElementById('spendCatChart'), {
+    type: 'bar',
+    data: { labels: cats, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: '#1e1e2e' } },
+        y: { grid: { color: '#1e1e2e' }, ticks: { callback: v => '$' + v } }
+      }
+    }
+  });
+}
+
+function buildClusterDonut() {
+  const profiles = DATA.cluster_profiles;
+  const legend = document.getElementById('donut-legend');
+  profiles.forEach(p => {
+    const pct = ((p.count / DATA.kpis.total_customers) * 100).toFixed(1);
+    legend.innerHTML += `
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+          <span style="font-size:.7rem;">${p.emoji} ${p.persona}</span>
+          <span style="color:${p.color};font-weight:500;font-size:.7rem;">${pct}%</span>
+        </div>
+        <div style="height:3px;background:#1e1e2e;border-radius:2px;overflow:hidden">
+          <div style="width:${pct}%;height:100%;background:${p.color};border-radius:2px"></div>
+        </div>
+      </div>`;
+  });
+
+  new Chart(document.getElementById('clusterDonut'), {
+    type: 'doughnut',
+    data: {
+      labels: profiles.map(p => p.persona),
+      datasets: [{
+        data: profiles.map(p => p.count),
+        backgroundColor: profiles.map(p => hex(p.color, 0.85)),
+        borderColor: profiles.map(p => p.color),
+        borderWidth: 2,
+        hoverOffset: 6,
+      }]
+    },
+    options: {
+      cutout: '68%',
+      plugins: { legend: { display: false }, tooltip: {
+        callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw} customers` }
+      }},
+    }
+  });
+}
+
+function buildIncomeDistChart() {
+  const bins = DATA.income_distribution['0'].bins;
+  const datasets = Object.entries(DATA.income_distribution).map(([id, d]) => ({
+    label: d.persona,
+    data: d.counts,
+    backgroundColor: hex(d.color, 0.5),
+    borderColor: d.color,
+    borderWidth: 1.5,
+    borderRadius: 3,
+  }));
+
+  new Chart(document.getElementById('incomeDistChart'), {
+    type: 'bar',
+    data: { labels: bins, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { boxWidth: 10, padding: 16 } } },
+      scales: {
+        x: { grid: { color: '#1e1e2e' } },
+        y: { grid: { color: '#1e1e2e' }, stacked: false }
+      }
+    }
+  });
+}
+
+function buildChannelRadar() {
+  const channels = ['Web','Catalog','Store','Deals'];
+  const datasets = DATA.channel_data.map(d => ({
+    label: d.persona,
+    data: [d.web, d.catalog, d.store, d.deals],
+    backgroundColor: hex(d.color, 0.15),
+    borderColor: d.color,
+    borderWidth: 2,
+    pointBackgroundColor: d.color,
+    pointRadius: 3,
+  }));
+
+  new Chart(document.getElementById('channelRadar'), {
+    type: 'radar',
+    data: { labels: channels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { r: {
+        grid: { color: '#1e1e2e' },
+        ticks: { display: false },
+        pointLabels: { font: { size: 11 }, color: '#6b6b88' }
+      }},
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// PERSONA TAB
+// ═══════════════════════════════════════════════════════════════════════
+
+function buildPersonaCards() {
+  const maxIncome = Math.max(...DATA.cluster_profiles.map(p => p.avg_income));
+  const container = document.getElementById('persona-cards');
+  DATA.cluster_profiles.forEach(p => {
+    const pct = ((p.avg_income / maxIncome) * 100).toFixed(0);
+    container.innerHTML += `
+      <div class="persona-card" style="--p-color:${p.color};background:linear-gradient(160deg,#111118 60%,${hex(p.color,0.04)} 100%)">
+        <span class="p-emoji">${p.emoji}</span>
+        <div class="p-name">${p.persona}</div>
+        <div class="p-count">${p.count} customers (${((p.count/DATA.kpis.total_customers)*100).toFixed(1)}%)</div>
+        <div class="p-stat"><span class="p-stat-label">Avg Income</span><span class="p-stat-val" style="color:${p.color}">$${p.avg_income.toLocaleString()}</span></div>
+        <div class="p-stat"><span class="p-stat-label">Avg Spend</span><span class="p-stat-val">$${p.avg_spend}</span></div>
+        <div class="p-stat"><span class="p-stat-label">Avg Age</span><span class="p-stat-val">${p.avg_age}</span></div>
+        <div class="p-stat"><span class="p-stat-label">Family Size</span><span class="p-stat-val">${p.avg_family_size}</span></div>
+        <div class="p-bar"><div class="p-bar-fill" style="width:${pct}%"></div></div>
+        <div class="p-desc">${p.description}</div>
+      </div>`;
+  });
+}
+
+function buildPersonaSpendBar() {
+  new Chart(document.getElementById('personaSpendBar'), {
+    type: 'bar',
+    data: {
+      labels: DATA.cluster_profiles.map(p => p.persona),
+      datasets: [{
+        label: 'Avg Spend',
+        data: DATA.cluster_profiles.map(p => p.avg_spend),
+        backgroundColor: DATA.cluster_profiles.map(p => hex(p.color, 0.7)),
+        borderColor: DATA.cluster_profiles.map(p => p.color),
+        borderWidth: 2, borderRadius: 6,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false } },
+        y: { grid: { color: '#1e1e2e' }, ticks: { callback: v => '$'+v } }
+      }
+    }
+  });
+}
+
+function buildIncomeVsSpend() {
+  new Chart(document.getElementById('incomeVsSpend'), {
+    type: 'scatter',
+    data: {
+      datasets: DATA.cluster_profiles.map(p => ({
+        label: p.persona,
+        data: [{ x: p.avg_income, y: p.avg_spend }],
+        backgroundColor: hex(p.color, 0.8),
+        borderColor: p.color,
+        borderWidth: 2,
+        pointRadius: 14,
+        pointHoverRadius: 18,
+      }))
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', labels: { boxWidth: 10 } },
+        tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: $${ctx.raw.x.toLocaleString()} income, $${ctx.raw.y} spend` }}
+      },
+      scales: {
+        x: { grid: { color: '#1e1e2e' }, title: { display: true, text: 'Avg Income ($)' }, ticks: { callback: v => '$'+(v/1000).toFixed(0)+'k' } },
+        y: { grid: { color: '#1e1e2e' }, title: { display: true, text: 'Avg Spend ($)' }, ticks: { callback: v => '$'+v } }
+      }
+    }
+  });
+}
+
+function buildProfileTable() {
+  const tbody = document.getElementById('profile-table');
+  DATA.cluster_profiles.forEach(p => {
+    tbody.innerHTML += `<tr>
+      <td><span style="color:${p.color}">${p.emoji} ${p.persona}</span></td>
+      <td>${p.count.toLocaleString()}</td>
+      <td>$${p.avg_income.toLocaleString()}</td>
+      <td>$${p.avg_spend}</td>
+      <td>${p.avg_age}</td>
+      <td>${p.avg_family_size}</td>
+      <td>${p.avg_recency}</td>
+    </tr>`;
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// PCA SCATTER
+// ═══════════════════════════════════════════════════════════════════════
+
+function buildPCAScatter() {
+  const legend = document.getElementById('pca-legend');
+  DATA.cluster_profiles.forEach(p => {
+    legend.innerHTML += `<div class="legend-item"><div class="legend-dot" style="background:${p.color}"></div>${p.emoji} ${p.persona}</div>`;
+  });
+
+  const canvas = document.getElementById('pca-canvas');
+  const ctx = canvas.getContext('2d');
+  const tooltip = document.getElementById('pca-tooltip');
+
+  // DPR
+  const dpr = window.devicePixelRatio || 1;
+  const W = canvas.parentElement.clientWidth - 56;
+  const H = 420;
+  canvas.style.width = W + 'px';
+  canvas.style.height = H + 'px';
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
+  ctx.scale(dpr, dpr);
+
+  const pts = DATA.scatter_data;
+  const xs = pts.map(p => p.x), ys = pts.map(p => p.y);
+  const xmin = Math.min(...xs) - 0.3, xmax = Math.max(...xs) + 0.3;
+  const ymin = Math.min(...ys) - 0.3, ymax = Math.max(...ys) + 0.3;
+
+  const PAD = 40;
+
+  function toCanvas(x, y) {
+    return [
+      PAD + ((x - xmin) / (xmax - xmin)) * (W - 2 * PAD),
+      H - PAD - ((y - ymin) / (ymax - ymin)) * (H - 2 * PAD)
+    ];
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Grid
+    ctx.strokeStyle = '#1e1e2e';
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= 5; i++) {
+      const gx = PAD + (i / 5) * (W - 2 * PAD);
+      const gy = PAD + (i / 5) * (H - 2 * PAD);
+      ctx.beginPath(); ctx.moveTo(gx, PAD); ctx.lineTo(gx, H - PAD); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(PAD, gy); ctx.lineTo(W - PAD, gy); ctx.stroke();
+    }
+
+    // Axes labels
+    ctx.fillStyle = '#6b6b88';
+    ctx.font = '10px DM Mono, monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('PC1 (17.2%)', W / 2, H - 6);
+    ctx.save(); ctx.translate(12, H / 2); ctx.rotate(-Math.PI / 2);
+    ctx.fillText('PC2 (10.7%)', 0, 0); ctx.restore();
+
+    // Points
+    pts.forEach(p => {
+      const [cx, cy] = toCanvas(p.x, p.y);
+      const col = COLORS[p.cluster] || '#888';
+      ctx.beginPath();
+      ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+      ctx.fillStyle = col + 'bb';
+      ctx.fill();
+    });
+  }
+
+  draw();
+
+  // Hover tooltip
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+    let hit = null, minDist = 12;
+
+    pts.forEach(p => {
+      const [cx, cy] = toCanvas(p.x, p.y);
+      const d = Math.hypot(cx - mx, cy - my);
+      if (d < minDist) { minDist = d; hit = p; }
+    });
+
+    if (hit) {
+      const col = COLORS[hit.cluster];
+      tooltip.style.display = 'block';
+      tooltip.style.left = (mx + 14) + 'px';
+      tooltip.style.top = (my - 10) + 'px';
+      tooltip.innerHTML = `
+        <b style="color:${col}">${PROFILE_MAP[hit.cluster]?.emoji} ${hit.persona}</b><br>
+        Income: $${hit.income.toLocaleString()}<br>
+        Spend: $${hit.spend}<br>
+        Age: ${hit.age}<br>
+        <span style="color:#6b6b88;font-size:.6rem">PC1=${hit.x} PC2=${hit.y}</span>`;
+
+      // highlight
+      draw();
+      const [cx, cy] = toCanvas(hit.x, hit.y);
+      ctx.beginPath(); ctx.arc(cx, cy, 7, 0, Math.PI * 2);
+      ctx.fillStyle = col;
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 1.5;
+      ctx.fill(); ctx.stroke();
+    } else {
+      tooltip.style.display = 'none';
+      draw();
+    }
+  });
+
+  canvas.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; draw(); });
+
+  // Variance chart
+  new Chart(document.getElementById('pcaVarChart'), {
+    type: 'bar',
+    data: {
+      labels: ['PC1','PC2'],
+      datasets: [{
+        data: [17.2, 10.7],
+        backgroundColor: [hex('#7c6af7', 0.7), hex('#7c6af7', 0.4)],
+        borderColor: ['#7c6af7', '#7c6af7'],
+        borderWidth: 2, borderRadius: 6,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false } },
+        y: { grid: { color: '#1e1e2e' }, ticks: { callback: v => v + '%' }, max: 25 }
+      }
+    }
+  });
+
+  // Feature chips
+  const chips = document.getElementById('feature-chips');
+  DATA.features_used.forEach(f => {
+    chips.innerHTML += `<span class="feature-chip">${f}</span>`;
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// SPEND TAB
+// ═══════════════════════════════════════════════════════════════════════
+
+function buildSpendAnalysis() {
+  const catKeys = ['MntWines','MntFruits','MntMeatProducts','MntFishProducts','MntSweetProducts','MntGoldProds'];
+  const catLabels = ['Wines','Fruits','Meat','Fish','Sweets','Gold'];
+  const catColors = ['#7c6af7','#10B981','#F59E0B','#3B82F6','#EC4899','#F97316'];
+
+  // Grouped bar — one group per segment
+  const datasets = catLabels.map((cat, i) => ({
+    label: cat,
+    data: DATA.spend_breakdown.map(s => s[catKeys[i]]),
+    backgroundColor: hex(catColors[i], 0.7),
+    borderColor: catColors[i],
+    borderWidth: 1.5, borderRadius: 4,
+  }));
+
+  new Chart(document.getElementById('spendGrouped'), {
+    type: 'bar',
+    data: { labels: DATA.spend_breakdown.map(s => s.persona), datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { boxWidth: 10, padding: 12 } } },
+      scales: {
+        x: { grid: { display: false } },
+        y: { grid: { color: '#1e1e2e' }, ticks: { callback: v => '$'+v } }
+      }
+    }
+  });
+
+  // Stacked %
+  const totals = DATA.spend_breakdown.map(s => catKeys.reduce((a, k) => a + s[k], 0));
+  const stackedDS = catLabels.map((cat, i) => ({
+    label: cat,
+    data: DATA.spend_breakdown.map((s, j) => parseFloat(((s[catKeys[i]] / totals[j]) * 100).toFixed(1))),
+    backgroundColor: catColors[i] + 'cc',
+    borderColor: catColors[i],
+    borderWidth: 0, borderRadius: 0,
+  }));
+
+  new Chart(document.getElementById('spendStacked'), {
+    type: 'bar',
+    data: { labels: DATA.spend_breakdown.map(s => s.persona), datasets: stackedDS },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { boxWidth: 10, padding: 12 } } },
+      scales: {
+        x: { stacked: true, grid: { display: false } },
+        y: { stacked: true, grid: { color: '#1e1e2e' }, ticks: { callback: v => v + '%' }, max: 100 }
+      }
+    }
+  });
+
+  // Channel bar
+  const channelKeys = ['web','catalog','store','deals'];
+  const channelLabels = ['Web','Catalog','Store','Deals'];
+  const chDS = channelLabels.map((ch, i) => ({
+    label: ch,
+    data: DATA.channel_data.map(d => d[channelKeys[i]]),
+    backgroundColor: hex(catColors[i], 0.7),
+    borderColor: catColors[i],
+    borderWidth: 1.5, borderRadius: 4,
+  }));
+
+  new Chart(document.getElementById('channelBar'), {
+    type: 'bar',
+    data: { labels: DATA.channel_data.map(d => d.persona), datasets: chDS },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { boxWidth: 10, padding: 12 } } },
+      scales: {
+        x: { grid: { display: false } },
+        y: { grid: { color: '#1e1e2e' } }
+      }
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// CLUSTERING TAB
+// ═══════════════════════════════════════════════════════════════════════
+
+function buildClusteringCharts() {
+  const ks = DATA.elbow_data.map(d => d.k);
+  const inertias = DATA.elbow_data.map(d => d.inertia);
+  const sils = DATA.elbow_data.map(d => d.silhouette);
+
+  new Chart(document.getElementById('elbowChart'), {
+    type: 'line',
+    data: {
+      labels: ks,
+      datasets: [{
+        label: 'Inertia (WCSS)',
+        data: inertias,
+        borderColor: '#7c6af7',
+        backgroundColor: hex('#7c6af7', 0.1),
+        borderWidth: 2.5,
+        pointBackgroundColor: '#7c6af7',
+        pointRadius: 5,
+        pointHoverRadius: 8,
+        fill: true,
+        tension: 0.3,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: {
+        callbacks: { label: ctx => ' Inertia: ' + ctx.raw.toFixed(0) }
+      }},
+      scales: {
+        x: { grid: { color: '#1e1e2e' }, title: { display: true, text: 'Number of Clusters (k)' } },
+        y: { grid: { color: '#1e1e2e' }, title: { display: true, text: 'Inertia' } }
+      }
+    }
+  });
+
+  new Chart(document.getElementById('silhouetteChart'), {
+    type: 'line',
+    data: {
+      labels: ks,
+      datasets: [{
+        label: 'Silhouette Score',
+        data: sils,
+        borderColor: '#10B981',
+        backgroundColor: hex('#10B981', 0.1),
+        borderWidth: 2.5,
+        pointBackgroundColor: ks.map((k, i) => sils[i] === Math.max(...sils) ? '#F59E0B' : '#10B981'),
+        pointRadius: ks.map((k, i) => sils[i] === Math.max(...sils) ? 8 : 5),
+        fill: true,
+        tension: 0.3,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: {
+        callbacks: { label: ctx => ' Silhouette: ' + ctx.raw.toFixed(4) }
+      }},
+      scales: {
+        x: { grid: { color: '#1e1e2e' }, title: { display: true, text: 'Number of Clusters (k)' } },
+        y: { grid: { color: '#1e1e2e' }, title: { display: true, text: 'Silhouette Score' } }
+      }
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════════════
+
+window.addEventListener('DOMContentLoaded', () => {
+  buildSpendCatChart();
+  buildClusterDonut();
+  buildIncomeDistChart();
+  buildChannelRadar();
+  buildPersonaCards();
+  buildPersonaSpendBar();
+  buildIncomeVsSpend();
+  buildProfileTable();
+  buildPCAScatter();
+  buildSpendAnalysis();
+  buildClusteringCharts();
+});
+</script>
+</body>
+</html>

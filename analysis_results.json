@@ -1,0 +1,5695 @@
+{
+  "kpis": {
+    "total_customers": 2203,
+    "avg_income": 57738,
+    "avg_spend": 569,
+    "avg_age": 45.0,
+    "pca_variance_explained": [
+      17.2,
+      10.7
+    ],
+    "best_k": 2,
+    "best_silhouette": 0.1071
+  },
+  "elbow_data": [
+    {
+      "k": 2,
+      "inertia": 19547.33,
+      "silhouette": 0.1071
+    },
+    {
+      "k": 3,
+      "inertia": 18025.64,
+      "silhouette": 0.1047
+    },
+    {
+      "k": 4,
+      "inertia": 17155.43,
+      "silhouette": 0.0897
+    },
+    {
+      "k": 5,
+      "inertia": 16470.38,
+      "silhouette": 0.0867
+    },
+    {
+      "k": 6,
+      "inertia": 15946.42,
+      "silhouette": 0.0802
+    },
+    {
+      "k": 7,
+      "inertia": 15458.57,
+      "silhouette": 0.085
+    },
+    {
+      "k": 8,
+      "inertia": 15003.95,
+      "silhouette": 0.0863
+    },
+    {
+      "k": 9,
+      "inertia": 14658.62,
+      "silhouette": 0.0831
+    },
+    {
+      "k": 10,
+      "inertia": 14271.55,
+      "silhouette": 0.0869
+    }
+  ],
+  "scatter_data": [
+    {
+      "x": -0.489,
+      "y": 1.04,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 41005,
+      "spend": 591,
+      "age": 48
+    },
+    {
+      "x": -0.307,
+      "y": 0.016,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 60606,
+      "spend": 464,
+      "age": 39
+    },
+    {
+      "x": 0.53,
+      "y": -1.394,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 71165,
+      "spend": 529,
+      "age": 54
+    },
+    {
+      "x": -2.138,
+      "y": 0.824,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 16293,
+      "spend": 224,
+      "age": 46
+    },
+    {
+      "x": -1.045,
+      "y": 0.695,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 48286,
+      "spend": 263,
+      "age": 47
+    },
+    {
+      "x": -1.775,
+      "y": -0.914,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 26773,
+      "spend": 257,
+      "age": 44
+    },
+    {
+      "x": 0.446,
+      "y": -0.606,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 58371,
+      "spend": 711,
+      "age": 49
+    },
+    {
+      "x": -1.059,
+      "y": -1.729,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 32812,
+      "spend": 355,
+      "age": 58
+    },
+    {
+      "x": 0.483,
+      "y": 0.241,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 56896,
+      "spend": 581,
+      "age": 63
+    },
+    {
+      "x": -2.043,
+      "y": 2.295,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 37883,
+      "spend": 126,
+      "age": 26
+    },
+    {
+      "x": -0.458,
+      "y": 1.108,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 49482,
+      "spend": 458,
+      "age": 45
+    },
+    {
+      "x": -0.18,
+      "y": -1.449,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 47483,
+      "spend": 764,
+      "age": 35
+    },
+    {
+      "x": 2.464,
+      "y": 0.803,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 87447,
+      "spend": 1111,
+      "age": 51
+    },
+    {
+      "x": 1.529,
+      "y": 0.782,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 70152,
+      "spend": 948,
+      "age": 51
+    },
+    {
+      "x": 0.995,
+      "y": -1.999,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 68397,
+      "spend": 602,
+      "age": 67
+    },
+    {
+      "x": -0.32,
+      "y": 0.39,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 61242,
+      "spend": 384,
+      "age": 45
+    },
+    {
+      "x": 3.113,
+      "y": -1.216,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 93575,
+      "spend": 1299,
+      "age": 54
+    },
+    {
+      "x": 0.469,
+      "y": -0.961,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 65735,
+      "spend": 740,
+      "age": 37
+    },
+    {
+      "x": -1.395,
+      "y": -0.025,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 48187,
+      "spend": 266,
+      "age": 34
+    },
+    {
+      "x": -0.297,
+      "y": 1.334,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 58942,
+      "spend": 387,
+      "age": 45
+    },
+    {
+      "x": -0.553,
+      "y": 1.376,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 54526,
+      "spend": 538,
+      "age": 30
+    },
+    {
+      "x": 1.069,
+      "y": -1.89,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 59657,
+      "spend": 840,
+      "age": 60
+    },
+    {
+      "x": 0.775,
+      "y": 0.721,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 63904,
+      "spend": 791,
+      "age": 47
+    },
+    {
+      "x": 0.281,
+      "y": 0.255,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 60720,
+      "spend": 498,
+      "age": 56
+    },
+    {
+      "x": 1.514,
+      "y": 0.241,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 90618,
+      "spend": 805,
+      "age": 37
+    },
+    {
+      "x": -1.958,
+      "y": 0.917,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 37438,
+      "spend": 161,
+      "age": 34
+    },
+    {
+      "x": 0.303,
+      "y": 0.276,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 59985,
+      "spend": 431,
+      "age": 67
+    },
+    {
+      "x": -0.62,
+      "y": -2.155,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 48172,
+      "spend": 307,
+      "age": 58
+    },
+    {
+      "x": 0.168,
+      "y": 1.144,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 53462,
+      "spend": 868,
+      "age": 28
+    },
+    {
+      "x": -0.276,
+      "y": 0.833,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 63609,
+      "spend": 398,
+      "age": 41
+    },
+    {
+      "x": -0.13,
+      "y": -0.575,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 53857,
+      "spend": 684,
+      "age": 35
+    },
+    {
+      "x": -0.974,
+      "y": 1.769,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 36864,
+      "spend": 593,
+      "age": 30
+    },
+    {
+      "x": -0.474,
+      "y": 1.442,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 60119,
+      "spend": 363,
+      "age": 43
+    },
+    {
+      "x": -1.99,
+      "y": -0.062,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 23279,
+      "spend": 124,
+      "age": 56
+    },
+    {
+      "x": -0.137,
+      "y": -0.364,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 62055,
+      "spend": 371,
+      "age": 51
+    },
+    {
+      "x": 0.114,
+      "y": -0.889,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 48719,
+      "spend": 664,
+      "age": 53
+    },
+    {
+      "x": -1.114,
+      "y": 0.474,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 50011,
+      "spend": 214,
+      "age": 41
+    },
+    {
+      "x": -1.884,
+      "y": -0.644,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 30966,
+      "spend": 95,
+      "age": 51
+    },
+    {
+      "x": 0.986,
+      "y": -0.101,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 81191,
+      "spend": 617,
+      "age": 45
+    },
+    {
+      "x": 0.684,
+      "y": 0.481,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 72139,
+      "spend": 725,
+      "age": 37
+    },
+    {
+      "x": 1.148,
+      "y": -0.816,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 66168,
+      "spend": 817,
+      "age": 54
+    },
+    {
+      "x": -0.184,
+      "y": -1.486,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 49196,
+      "spend": 466,
+      "age": 58
+    },
+    {
+      "x": -2.086,
+      "y": 0.794,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 34737,
+      "spend": 310,
+      "age": 18
+    },
+    {
+      "x": 1.066,
+      "y": 0.292,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 68924,
+      "spend": 879,
+      "age": 44
+    },
+    {
+      "x": 1.362,
+      "y": 1.476,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 71127,
+      "spend": 964,
+      "age": 42
+    },
+    {
+      "x": -1.347,
+      "y": -0.549,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 40006,
+      "spend": 394,
+      "age": 33
+    },
+    {
+      "x": -1.254,
+      "y": -0.087,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 37006,
+      "spend": 356,
+      "age": 42
+    },
+    {
+      "x": 1.93,
+      "y": -0.813,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 111756,
+      "spend": 678,
+      "age": 39
+    },
+    {
+      "x": -1.795,
+      "y": 0.145,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 38865,
+      "spend": 197,
+      "age": 30
+    },
+    {
+      "x": -0.752,
+      "y": 1.135,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 45062,
+      "spend": 545,
+      "age": 32
+    },
+    {
+      "x": -1.237,
+      "y": -0.153,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 41417,
+      "spend": 342,
+      "age": 38
+    },
+    {
+      "x": 1.845,
+      "y": 1.453,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 79396,
+      "spend": 858,
+      "age": 59
+    },
+    {
+      "x": -1.761,
+      "y": -1.021,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 25899,
+      "spend": 232,
+      "age": 52
+    },
+    {
+      "x": -0.861,
+      "y": -0.219,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 50753,
+      "spend": 518,
+      "age": 25
+    },
+    {
+      "x": 0.656,
+      "y": 0.32,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 67331,
+      "spend": 614,
+      "age": 50
+    },
+    {
+      "x": 0.132,
+      "y": -0.134,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 65463,
+      "spend": 494,
+      "age": 45
+    },
+    {
+      "x": 0.72,
+      "y": -0.982,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 66890,
+      "spend": 618,
+      "age": 59
+    },
+    {
+      "x": -2.327,
+      "y": -1.278,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 19487,
+      "spend": 27,
+      "age": 56
+    },
+    {
+      "x": 1.513,
+      "y": -0.724,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 71767,
+      "spend": 926,
+      "age": 51
+    },
+    {
+      "x": -1.504,
+      "y": -1.992,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 23974,
+      "spend": 296,
+      "age": 57
+    },
+    {
+      "x": -0.273,
+      "y": -0.065,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 48969,
+      "spend": 533,
+      "age": 50
+    },
+    {
+      "x": -1.059,
+      "y": -0.181,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 35140,
+      "spend": 303,
+      "age": 61
+    },
+    {
+      "x": 0.438,
+      "y": 1.446,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 60743,
+      "spend": 606,
+      "age": 56
+    },
+    {
+      "x": 1.385,
+      "y": 0.133,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 80403,
+      "spend": 668,
+      "age": 63
+    },
+    {
+      "x": -0.76,
+      "y": -0.718,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 51695,
+      "spend": 434,
+      "age": 34
+    },
+    {
+      "x": -0.528,
+      "y": 0.015,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 41460,
+      "spend": 549,
+      "age": 48
+    },
+    {
+      "x": -2.793,
+      "y": -1.143,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 17531,
+      "spend": 152,
+      "age": 32
+    },
+    {
+      "x": 1.365,
+      "y": -1.516,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 84941,
+      "spend": 820,
+      "age": 39
+    },
+    {
+      "x": -0.005,
+      "y": 0.763,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 65647,
+      "spend": 545,
+      "age": 37
+    },
+    {
+      "x": -1.141,
+      "y": -0.593,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 44240,
+      "spend": 297,
+      "age": 42
+    },
+    {
+      "x": 2.028,
+      "y": 1.301,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 75193,
+      "spend": 1223,
+      "age": 40
+    },
+    {
+      "x": 0.903,
+      "y": -0.191,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 57627,
+      "spend": 1070,
+      "age": 38
+    },
+    {
+      "x": 1.548,
+      "y": 0.231,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 98274,
+      "spend": 540,
+      "age": 49
+    },
+    {
+      "x": 2.214,
+      "y": 0.017,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 97477,
+      "spend": 850,
+      "age": 49
+    },
+    {
+      "x": -0.352,
+      "y": -1.025,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 49237,
+      "spend": 445,
+      "age": 56
+    },
+    {
+      "x": 0.791,
+      "y": -1.617,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 58820,
+      "spend": 769,
+      "age": 59
+    },
+    {
+      "x": -0.187,
+      "y": 0.866,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 49293,
+      "spend": 385,
+      "age": 64
+    },
+    {
+      "x": -1.219,
+      "y": -0.882,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 35129,
+      "spend": 412,
+      "age": 46
+    },
+    {
+      "x": 1.476,
+      "y": 0.515,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 82228,
+      "spend": 858,
+      "age": 45
+    },
+    {
+      "x": 0.961,
+      "y": 0.601,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 76961,
+      "spend": 768,
+      "age": 35
+    },
+    {
+      "x": 1.778,
+      "y": -0.323,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 70285,
+      "spend": 1138,
+      "age": 48
+    },
+    {
+      "x": -2.006,
+      "y": -1.381,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 35016,
+      "spend": 153,
+      "age": 35
+    },
+    {
+      "x": 0.541,
+      "y": 0.329,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 72962,
+      "spend": 616,
+      "age": 38
+    },
+    {
+      "x": -0.551,
+      "y": 0.491,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 45891,
+      "spend": 314,
+      "age": 63
+    },
+    {
+      "x": -0.358,
+      "y": -0.009,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 64242,
+      "spend": 263,
+      "age": 52
+    },
+    {
+      "x": 0.762,
+      "y": -0.284,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 60656,
+      "spend": 859,
+      "age": 48
+    },
+    {
+      "x": -0.418,
+      "y": 1.221,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 61699,
+      "spend": 470,
+      "age": 28
+    },
+    {
+      "x": 2.519,
+      "y": -0.491,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 83130,
+      "spend": 1188,
+      "age": 51
+    },
+    {
+      "x": -0.338,
+      "y": 0.573,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 52830,
+      "spend": 418,
+      "age": 53
+    },
+    {
+      "x": 2.106,
+      "y": -2.1,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 78141,
+      "spend": 997,
+      "age": 60
+    },
+    {
+      "x": -0.206,
+      "y": 0.645,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 63160,
+      "spend": 436,
+      "age": 43
+    },
+    {
+      "x": 1.384,
+      "y": 0.373,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 107916,
+      "spend": 441,
+      "age": 38
+    },
+    {
+      "x": 1.854,
+      "y": -0.52,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 88214,
+      "spend": 662,
+      "age": 64
+    },
+    {
+      "x": 0.408,
+      "y": -0.993,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 56029,
+      "spend": 707,
+      "age": 49
+    },
+    {
+      "x": 2.356,
+      "y": 0.925,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 88327,
+      "spend": 1067,
+      "age": 53
+    },
+    {
+      "x": 1.011,
+      "y": -0.129,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 58398,
+      "spend": 968,
+      "age": 51
+    },
+    {
+      "x": -1.099,
+      "y": 0.324,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 46988,
+      "spend": 446,
+      "age": 28
+    },
+    {
+      "x": 0.078,
+      "y": 1.264,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 37668,
+      "spend": 712,
+      "age": 64
+    },
+    {
+      "x": -2.148,
+      "y": 1.585,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 31971,
+      "spend": 292,
+      "age": 19
+    },
+    {
+      "x": 0.373,
+      "y": 0.389,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 50465,
+      "spend": 702,
+      "age": 56
+    },
+    {
+      "x": 1.533,
+      "y": 1.018,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 65753,
+      "spend": 1084,
+      "age": 48
+    },
+    {
+      "x": -0.908,
+      "y": -0.344,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 33092,
+      "spend": 376,
+      "age": 62
+    },
+    {
+      "x": 1.473,
+      "y": 0.014,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 84514,
+      "spend": 850,
+      "age": 38
+    },
+    {
+      "x": 2.251,
+      "y": -1.088,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 92863,
+      "spend": 1021,
+      "age": 49
+    },
+    {
+      "x": -1.195,
+      "y": 0.394,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 38126,
+      "spend": 519,
+      "age": 29
+    },
+    {
+      "x": 1.37,
+      "y": 0.933,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 91563,
+      "spend": 736,
+      "age": 38
+    },
+    {
+      "x": -0.848,
+      "y": 0.399,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 53254,
+      "spend": 404,
+      "age": 33
+    },
+    {
+      "x": -0.034,
+      "y": 0.594,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 65189,
+      "spend": 266,
+      "age": 62
+    },
+    {
+      "x": -0.93,
+      "y": -1.166,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 45031,
+      "spend": 255,
+      "age": 54
+    },
+    {
+      "x": 0.878,
+      "y": -0.929,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 60822,
+      "spend": 513,
+      "age": 80
+    },
+    {
+      "x": 1.461,
+      "y": 0.835,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 65524,
+      "spend": 1009,
+      "age": 51
+    },
+    {
+      "x": 0.84,
+      "y": -0.839,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 63397,
+      "spend": 724,
+      "age": 57
+    },
+    {
+      "x": -0.532,
+      "y": 0.085,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 50811,
+      "spend": 416,
+      "age": 50
+    },
+    {
+      "x": 0.655,
+      "y": 1.76,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 52759,
+      "spend": 638,
+      "age": 67
+    },
+    {
+      "x": 1.549,
+      "y": -0.35,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 59814,
+      "spend": 1065,
+      "age": 60
+    },
+    {
+      "x": -0.445,
+      "y": 0.65,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 51966,
+      "spend": 501,
+      "age": 39
+    },
+    {
+      "x": 1.956,
+      "y": -0.876,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 73456,
+      "spend": 988,
+      "age": 60
+    },
+    {
+      "x": 1.495,
+      "y": -1.749,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 95972,
+      "spend": 695,
+      "age": 42
+    },
+    {
+      "x": -0.915,
+      "y": 1.844,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 43403,
+      "spend": 400,
+      "age": 44
+    },
+    {
+      "x": -0.955,
+      "y": -0.877,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 48563,
+      "spend": 365,
+      "age": 40
+    },
+    {
+      "x": -0.639,
+      "y": 1.245,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 58262,
+      "spend": 288,
+      "age": 46
+    },
+    {
+      "x": -0.915,
+      "y": 1.203,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 38017,
+      "spend": 298,
+      "age": 57
+    },
+    {
+      "x": 2.845,
+      "y": 1.6,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 95574,
+      "spend": 1251,
+      "age": 44
+    },
+    {
+      "x": 1.713,
+      "y": 1.1,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 80954,
+      "spend": 589,
+      "age": 76
+    },
+    {
+      "x": -1.099,
+      "y": 0.095,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 51464,
+      "spend": 462,
+      "age": 18
+    },
+    {
+      "x": 1.766,
+      "y": -1.049,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 75619,
+      "spend": 1164,
+      "age": 40
+    },
+    {
+      "x": 1.05,
+      "y": 1.726,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 65611,
+      "spend": 644,
+      "age": 70
+    },
+    {
+      "x": 1.543,
+      "y": 0.214,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 93040,
+      "spend": 738,
+      "age": 39
+    },
+    {
+      "x": 0.36,
+      "y": 0.046,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 68429,
+      "spend": 614,
+      "age": 43
+    },
+    {
+      "x": 1.051,
+      "y": 0.04,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 65313,
+      "spend": 876,
+      "age": 49
+    },
+    {
+      "x": -0.081,
+      "y": -1.353,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 52113,
+      "spend": 543,
+      "age": 52
+    },
+    {
+      "x": 1.388,
+      "y": -0.181,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 72497,
+      "spend": 748,
+      "age": 61
+    },
+    {
+      "x": -2.24,
+      "y": -1.037,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 17385,
+      "spend": 101,
+      "age": 53
+    },
+    {
+      "x": -0.446,
+      "y": -1.549,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 45485,
+      "spend": 471,
+      "age": 57
+    },
+    {
+      "x": -0.886,
+      "y": 0.896,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 52166,
+      "spend": 202,
+      "age": 50
+    },
+    {
+      "x": 0.832,
+      "y": 1.046,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 62238,
+      "spend": 804,
+      "age": 51
+    },
+    {
+      "x": 2.188,
+      "y": 2.384,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 91902,
+      "spend": 930,
+      "age": 51
+    },
+    {
+      "x": 1.156,
+      "y": 0.088,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 77075,
+      "spend": 805,
+      "age": 45
+    },
+    {
+      "x": 2.773,
+      "y": 1.051,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 106076,
+      "spend": 1073,
+      "age": 39
+    },
+    {
+      "x": 0.948,
+      "y": 1.057,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 59847,
+      "spend": 1020,
+      "age": 41
+    },
+    {
+      "x": -0.992,
+      "y": 1.568,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 46256,
+      "spend": 532,
+      "age": 23
+    },
+    {
+      "x": 0.781,
+      "y": -1.282,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 72460,
+      "spend": 563,
+      "age": 57
+    },
+    {
+      "x": 2.676,
+      "y": -0.237,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 91733,
+      "spend": 1296,
+      "age": 36
+    },
+    {
+      "x": -0.987,
+      "y": 0.456,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 48407,
+      "spend": 477,
+      "age": 24
+    },
+    {
+      "x": 1.364,
+      "y": -0.667,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 75768,
+      "spend": 882,
+      "age": 48
+    },
+    {
+      "x": 0.912,
+      "y": -0.401,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 64354,
+      "spend": 906,
+      "age": 42
+    },
+    {
+      "x": -2.979,
+      "y": -1.531,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 8249,
+      "spend": 70,
+      "age": 41
+    },
+    {
+      "x": -0.791,
+      "y": 0.22,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 40668,
+      "spend": 358,
+      "age": 54
+    },
+    {
+      "x": 1.523,
+      "y": 1.248,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 81164,
+      "spend": 775,
+      "age": 56
+    },
+    {
+      "x": 1.939,
+      "y": -0.405,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 64623,
+      "spend": 985,
+      "age": 75
+    },
+    {
+      "x": 0.08,
+      "y": -0.846,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 65386,
+      "spend": 471,
+      "age": 49
+    },
+    {
+      "x": -2.378,
+      "y": -0.944,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 21112,
+      "spend": 167,
+      "age": 41
+    },
+    {
+      "x": -2.204,
+      "y": 0.694,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 20975,
+      "spend": 160,
+      "age": 49
+    },
+    {
+      "x": 1.567,
+      "y": 0.975,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 62837,
+      "spend": 1094,
+      "age": 52
+    },
+    {
+      "x": 0.284,
+      "y": 1.828,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 44399,
+      "spend": 552,
+      "age": 73
+    },
+    {
+      "x": -0.734,
+      "y": 0.588,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 42063,
+      "spend": 639,
+      "age": 34
+    },
+    {
+      "x": 0.242,
+      "y": 0.397,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 50744,
+      "spend": 624,
+      "age": 59
+    },
+    {
+      "x": -1.879,
+      "y": 0.784,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 30177,
+      "spend": 317,
+      "age": 29
+    },
+    {
+      "x": 0.257,
+      "y": -0.033,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 84653,
+      "spend": 308,
+      "age": 38
+    },
+    {
+      "x": -1.009,
+      "y": -1.075,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 48222,
+      "spend": 407,
+      "age": 38
+    },
+    {
+      "x": -0.892,
+      "y": -1.494,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 44240,
+      "spend": 555,
+      "age": 30
+    },
+    {
+      "x": -0.818,
+      "y": -0.264,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 48300,
+      "spend": 222,
+      "age": 56
+    },
+    {
+      "x": -0.556,
+      "y": 1.367,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 73316,
+      "spend": 182,
+      "age": 35
+    },
+    {
+      "x": 0.832,
+      "y": -0.415,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 100330,
+      "spend": 210,
+      "age": 50
+    },
+    {
+      "x": 1.731,
+      "y": 1.897,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 79661,
+      "spend": 942,
+      "age": 47
+    },
+    {
+      "x": 1.361,
+      "y": 0.426,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 83904,
+      "spend": 789,
+      "age": 40
+    },
+    {
+      "x": 0.544,
+      "y": 1.503,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 63178,
+      "spend": 744,
+      "age": 43
+    },
+    {
+      "x": 1.074,
+      "y": 1.228,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 89051,
+      "spend": 510,
+      "age": 47
+    },
+    {
+      "x": -2.22,
+      "y": 1.5,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 34619,
+      "spend": 236,
+      "age": 18
+    },
+    {
+      "x": 1.635,
+      "y": 1.557,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 92017,
+      "spend": 732,
+      "age": 48
+    },
+    {
+      "x": 2.085,
+      "y": 0.192,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 94335,
+      "spend": 922,
+      "age": 46
+    },
+    {
+      "x": 0.252,
+      "y": 1.071,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 64659,
+      "spend": 648,
+      "age": 35
+    },
+    {
+      "x": -1.577,
+      "y": -1.696,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 32459,
+      "spend": 300,
+      "age": 44
+    },
+    {
+      "x": -1.41,
+      "y": 2.132,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 40917,
+      "spend": 389,
+      "age": 30
+    },
+    {
+      "x": 0.27,
+      "y": -0.122,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 77911,
+      "spend": 435,
+      "age": 37
+    },
+    {
+      "x": -0.584,
+      "y": -0.258,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 40802,
+      "spend": 345,
+      "age": 63
+    },
+    {
+      "x": 0.569,
+      "y": 2.225,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 63825,
+      "spend": 724,
+      "age": 46
+    },
+    {
+      "x": -0.886,
+      "y": 1.032,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 30416,
+      "spend": 535,
+      "age": 52
+    },
+    {
+      "x": -0.169,
+      "y": 2.165,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 57322,
+      "spend": 464,
+      "age": 43
+    },
+    {
+      "x": -0.101,
+      "y": -1.303,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 73768,
+      "spend": 353,
+      "age": 41
+    },
+    {
+      "x": 1.908,
+      "y": -2.295,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 86979,
+      "spend": 895,
+      "age": 51
+    },
+    {
+      "x": -1.259,
+      "y": -0.784,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 35918,
+      "spend": 535,
+      "age": 30
+    },
+    {
+      "x": -2.217,
+      "y": -0.09,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 35127,
+      "spend": 214,
+      "age": 18
+    },
+    {
+      "x": 0.498,
+      "y": 1.166,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 61329,
+      "spend": 835,
+      "age": 35
+    },
+    {
+      "x": 0.434,
+      "y": -2.164,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 83034,
+      "spend": 280,
+      "age": 52
+    },
+    {
+      "x": -0.958,
+      "y": -0.907,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 53517,
+      "spend": 262,
+      "age": 38
+    },
+    {
+      "x": -2.925,
+      "y": -1.119,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 5000,
+      "spend": 57,
+      "age": 52
+    },
+    {
+      "x": 1.401,
+      "y": 1.388,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 94395,
+      "spend": 628,
+      "age": 45
+    },
+    {
+      "x": 0.066,
+      "y": 0.972,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 69206,
+      "spend": 357,
+      "age": 49
+    },
+    {
+      "x": 1.812,
+      "y": 1.134,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 79228,
+      "spend": 986,
+      "age": 51
+    },
+    {
+      "x": -0.51,
+      "y": 0.772,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 52291,
+      "spend": 391,
+      "age": 47
+    },
+    {
+      "x": 1.59,
+      "y": 0.132,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 60933,
+      "spend": 1027,
+      "age": 66
+    },
+    {
+      "x": 0.754,
+      "y": -0.904,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 74116,
+      "spend": 504,
+      "age": 57
+    },
+    {
+      "x": 0.058,
+      "y": 0.669,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 68886,
+      "spend": 501,
+      "age": 38
+    },
+    {
+      "x": -1.872,
+      "y": -0.679,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 26445,
+      "spend": 358,
+      "age": 31
+    },
+    {
+      "x": 1.304,
+      "y": -1.857,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 56765,
+      "spend": 966,
+      "age": 65
+    },
+    {
+      "x": 0.253,
+      "y": -0.055,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 52792,
+      "spend": 582,
+      "age": 60
+    },
+    {
+      "x": 0.233,
+      "y": -0.001,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 78046,
+      "spend": 466,
+      "age": 39
+    },
+    {
+      "x": 1.001,
+      "y": 1.605,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 87785,
+      "spend": 418,
+      "age": 56
+    },
+    {
+      "x": -1.75,
+      "y": 0.322,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 34470,
+      "spend": 285,
+      "age": 31
+    },
+    {
+      "x": 0.811,
+      "y": -0.057,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 58782,
+      "spend": 641,
+      "age": 69
+    },
+    {
+      "x": 1.529,
+      "y": 1.765,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 82343,
+      "spend": 943,
+      "age": 35
+    },
+    {
+      "x": 0.497,
+      "y": -0.238,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 54162,
+      "spend": 769,
+      "age": 55
+    },
+    {
+      "x": -0.095,
+      "y": -1.083,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 58703,
+      "spend": 353,
+      "age": 58
+    },
+    {
+      "x": 0.533,
+      "y": 0.577,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 64415,
+      "spend": 437,
+      "age": 69
+    },
+    {
+      "x": 0.066,
+      "y": 0.538,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 63937,
+      "spend": 423,
+      "age": 49
+    },
+    {
+      "x": -1.423,
+      "y": 1.73,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 37388,
+      "spend": 280,
+      "age": 40
+    },
+    {
+      "x": 0.166,
+      "y": 0.815,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 48565,
+      "spend": 462,
+      "age": 72
+    },
+    {
+      "x": -1.229,
+      "y": 0.324,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 46210,
+      "spend": 311,
+      "age": 37
+    },
+    {
+      "x": -0.587,
+      "y": -0.668,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 62816,
+      "spend": 397,
+      "age": 29
+    },
+    {
+      "x": 2.156,
+      "y": 0.014,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 83204,
+      "spend": 1197,
+      "age": 41
+    },
+    {
+      "x": -2.229,
+      "y": 0.092,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 26473,
+      "spend": 246,
+      "age": 34
+    },
+    {
+      "x": -1.977,
+      "y": 1.233,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 24571,
+      "spend": 377,
+      "age": 30
+    },
+    {
+      "x": 0.257,
+      "y": -1.068,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 75537,
+      "spend": 350,
+      "age": 52
+    },
+    {
+      "x": 2.647,
+      "y": 0.145,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 86421,
+      "spend": 1384,
+      "age": 40
+    },
+    {
+      "x": -1.939,
+      "y": 0.607,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 33707,
+      "spend": 168,
+      "age": 39
+    },
+    {
+      "x": -1.253,
+      "y": 1.734,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 44183,
+      "spend": 333,
+      "age": 34
+    },
+    {
+      "x": -1.85,
+      "y": -0.149,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 33502,
+      "spend": 308,
+      "age": 31
+    },
+    {
+      "x": 0.977,
+      "y": 1.225,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 69207,
+      "spend": 730,
+      "age": 50
+    },
+    {
+      "x": 0.778,
+      "y": 1.294,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 59409,
+      "spend": 725,
+      "age": 58
+    },
+    {
+      "x": 0.576,
+      "y": -0.289,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 74611,
+      "spend": 678,
+      "age": 37
+    },
+    {
+      "x": -1.39,
+      "y": -1.005,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 45503,
+      "spend": 215,
+      "age": 39
+    },
+    {
+      "x": -0.427,
+      "y": -0.587,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 45374,
+      "spend": 347,
+      "age": 65
+    },
+    {
+      "x": -0.525,
+      "y": 1.306,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 53716,
+      "spend": 415,
+      "age": 45
+    },
+    {
+      "x": 1.188,
+      "y": -0.278,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 64670,
+      "spend": 895,
+      "age": 55
+    },
+    {
+      "x": 1.913,
+      "y": 1.73,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 84569,
+      "spend": 904,
+      "age": 50
+    },
+    {
+      "x": -0.788,
+      "y": 0.432,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 44873,
+      "spend": 583,
+      "age": 31
+    },
+    {
+      "x": -0.013,
+      "y": 0.017,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 44031,
+      "spend": 562,
+      "age": 67
+    },
+    {
+      "x": -0.04,
+      "y": -0.166,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 57164,
+      "spend": 376,
+      "age": 63
+    },
+    {
+      "x": 0.029,
+      "y": -1.009,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 47021,
+      "spend": 619,
+      "age": 58
+    },
+    {
+      "x": -2.042,
+      "y": -0.582,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 31201,
+      "spend": 212,
+      "age": 34
+    },
+    {
+      "x": 0.959,
+      "y": 0.322,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 74916,
+      "spend": 717,
+      "age": 44
+    },
+    {
+      "x": 0.129,
+      "y": 0.082,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 52922,
+      "spend": 642,
+      "age": 49
+    },
+    {
+      "x": -0.71,
+      "y": 0.943,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 40535,
+      "spend": 474,
+      "age": 47
+    },
+    {
+      "x": -0.027,
+      "y": -2.027,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 65402,
+      "spend": 435,
+      "age": 50
+    },
+    {
+      "x": -0.862,
+      "y": -1.125,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 45976,
+      "spend": 372,
+      "age": 46
+    },
+    {
+      "x": 0.518,
+      "y": -1.012,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 53606,
+      "spend": 846,
+      "age": 45
+    },
+    {
+      "x": -1.114,
+      "y": 1.661,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 54224,
+      "spend": 219,
+      "age": 37
+    },
+    {
+      "x": 1.403,
+      "y": 1.202,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 83519,
+      "spend": 658,
+      "age": 52
+    },
+    {
+      "x": -1.883,
+      "y": -0.067,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 35355,
+      "spend": 267,
+      "age": 27
+    },
+    {
+      "x": 1.006,
+      "y": 0.273,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 97326,
+      "spend": 361,
+      "age": 49
+    },
+    {
+      "x": 0.128,
+      "y": -0.959,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 68686,
+      "spend": 531,
+      "age": 38
+    },
+    {
+      "x": -2.328,
+      "y": 0.378,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 26807,
+      "spend": 230,
+      "age": 27
+    },
+    {
+      "x": -0.308,
+      "y": 0.452,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 49751,
+      "spend": 519,
+      "age": 47
+    },
+    {
+      "x": 1.732,
+      "y": -0.128,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 81455,
+      "spend": 900,
+      "age": 47
+    },
+    {
+      "x": -1.438,
+      "y": -0.205,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 50363,
+      "spend": 249,
+      "age": 30
+    },
+    {
+      "x": 0.579,
+      "y": -2.386,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 52014,
+      "spend": 756,
+      "age": 62
+    },
+    {
+      "x": 0.361,
+      "y": -0.679,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 57984,
+      "spend": 796,
+      "age": 41
+    },
+    {
+      "x": -1.307,
+      "y": 0.117,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 35847,
+      "spend": 440,
+      "age": 34
+    },
+    {
+      "x": 0.656,
+      "y": -1.32,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 73138,
+      "spend": 483,
+      "age": 58
+    },
+    {
+      "x": 1.138,
+      "y": -2.165,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 67789,
+      "spend": 870,
+      "age": 51
+    },
+    {
+      "x": 1.621,
+      "y": -0.346,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 67868,
+      "spend": 1112,
+      "age": 49
+    },
+    {
+      "x": 0.22,
+      "y": -0.657,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 68159,
+      "spend": 412,
+      "age": 53
+    },
+    {
+      "x": 1.076,
+      "y": -1.387,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 73745,
+      "spend": 666,
+      "age": 59
+    },
+    {
+      "x": 0.107,
+      "y": 0.386,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 60378,
+      "spend": 677,
+      "age": 37
+    },
+    {
+      "x": 2.335,
+      "y": 0.726,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 81845,
+      "spend": 1202,
+      "age": 47
+    },
+    {
+      "x": -0.715,
+      "y": 1.138,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 53414,
+      "spend": 452,
+      "age": 32
+    },
+    {
+      "x": 0.963,
+      "y": 0.847,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 91408,
+      "spend": 576,
+      "age": 35
+    },
+    {
+      "x": 1.755,
+      "y": 1.125,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 73192,
+      "spend": 1125,
+      "age": 45
+    },
+    {
+      "x": -1.938,
+      "y": 0.397,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 39401,
+      "spend": 311,
+      "age": 18
+    },
+    {
+      "x": -0.574,
+      "y": 0.171,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 62339,
+      "spend": 244,
+      "age": 48
+    },
+    {
+      "x": -0.692,
+      "y": 0.741,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 41930,
+      "spend": 392,
+      "age": 53
+    },
+    {
+      "x": 0.024,
+      "y": 0.19,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 64216,
+      "spend": 458,
+      "age": 47
+    },
+    {
+      "x": 2.435,
+      "y": -1.042,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 93546,
+      "spend": 1037,
+      "age": 52
+    },
+    {
+      "x": 1.999,
+      "y": -0.174,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 77190,
+      "spend": 1103,
+      "age": 50
+    },
+    {
+      "x": 1.881,
+      "y": -2.068,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 75359,
+      "spend": 1148,
+      "age": 43
+    },
+    {
+      "x": 1.786,
+      "y": 0.456,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 81632,
+      "spend": 1003,
+      "age": 42
+    },
+    {
+      "x": 1.106,
+      "y": 0.419,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 71104,
+      "spend": 808,
+      "age": 44
+    },
+    {
+      "x": -0.406,
+      "y": -0.258,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 56194,
+      "spend": 455,
+      "age": 42
+    },
+    {
+      "x": 0.104,
+      "y": -0.748,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 50884,
+      "spend": 736,
+      "age": 44
+    },
+    {
+      "x": -0.609,
+      "y": -0.039,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 41354,
+      "spend": 399,
+      "age": 61
+    },
+    {
+      "x": -1.402,
+      "y": -1.341,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 30623,
+      "spend": 266,
+      "age": 58
+    },
+    {
+      "x": -0.316,
+      "y": 2.101,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 42488,
+      "spend": 534,
+      "age": 51
+    },
+    {
+      "x": -1.848,
+      "y": -0.289,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 34743,
+      "spend": 289,
+      "age": 30
+    },
+    {
+      "x": 0.407,
+      "y": 1.286,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 66466,
+      "spend": 647,
+      "age": 41
+    },
+    {
+      "x": 1.303,
+      "y": -0.993,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 61556,
+      "spend": 803,
+      "age": 71
+    },
+    {
+      "x": -1.49,
+      "y": -0.235,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 42431,
+      "spend": 342,
+      "age": 25
+    },
+    {
+      "x": 3.705,
+      "y": -0.458,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 98307,
+      "spend": 1614,
+      "age": 44
+    },
+    {
+      "x": -0.207,
+      "y": -0.985,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 70581,
+      "spend": 395,
+      "age": 35
+    },
+    {
+      "x": -2.126,
+      "y": 1.991,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 30620,
+      "spend": 329,
+      "age": 18
+    },
+    {
+      "x": -0.152,
+      "y": 0.756,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 48682,
+      "spend": 467,
+      "age": 61
+    },
+    {
+      "x": -0.1,
+      "y": -0.606,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 64803,
+      "spend": 544,
+      "age": 36
+    },
+    {
+      "x": 1.636,
+      "y": -1.18,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 67583,
+      "spend": 1031,
+      "age": 54
+    },
+    {
+      "x": -0.677,
+      "y": 0.296,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 52202,
+      "spend": 575,
+      "age": 27
+    },
+    {
+      "x": -0.122,
+      "y": 1.02,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 47433,
+      "spend": 556,
+      "age": 55
+    },
+    {
+      "x": -0.44,
+      "y": 0.005,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 47987,
+      "spend": 519,
+      "age": 47
+    },
+    {
+      "x": -0.69,
+      "y": 0.049,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 46200,
+      "spend": 442,
+      "age": 43
+    },
+    {
+      "x": 1.542,
+      "y": 0.046,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 89668,
+      "spend": 749,
+      "age": 43
+    },
+    {
+      "x": -0.131,
+      "y": 1.949,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 42235,
+      "spend": 641,
+      "age": 55
+    },
+    {
+      "x": -1.466,
+      "y": 1.647,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 34101,
+      "spend": 294,
+      "age": 42
+    },
+    {
+      "x": -1.335,
+      "y": -0.153,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 47426,
+      "spend": 400,
+      "age": 22
+    },
+    {
+      "x": -0.755,
+      "y": -0.044,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 59541,
+      "spend": 107,
+      "age": 53
+    },
+    {
+      "x": -0.312,
+      "y": 0.32,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 53665,
+      "spend": 377,
+      "age": 53
+    },
+    {
+      "x": 0.294,
+      "y": 0.735,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 66386,
+      "spend": 478,
+      "age": 49
+    },
+    {
+      "x": 0.58,
+      "y": 1.236,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 61182,
+      "spend": 838,
+      "age": 41
+    },
+    {
+      "x": 0.815,
+      "y": -0.487,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 72307,
+      "spend": 679,
+      "age": 47
+    },
+    {
+      "x": -0.881,
+      "y": 0.494,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 50973,
+      "spend": 540,
+      "age": 19
+    },
+    {
+      "x": -1.736,
+      "y": -1.162,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 19527,
+      "spend": 269,
+      "age": 59
+    },
+    {
+      "x": -0.414,
+      "y": 0.463,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 56103,
+      "spend": 491,
+      "age": 41
+    },
+    {
+      "x": 1.596,
+      "y": -0.132,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 72868,
+      "spend": 894,
+      "age": 56
+    },
+    {
+      "x": -0.005,
+      "y": -0.469,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 43862,
+      "spend": 649,
+      "age": 58
+    },
+    {
+      "x": 0.505,
+      "y": 0.45,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 67711,
+      "spend": 678,
+      "age": 41
+    },
+    {
+      "x": 2.744,
+      "y": 0.544,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 105843,
+      "spend": 1061,
+      "age": 40
+    },
+    {
+      "x": 0.143,
+      "y": 1.198,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 61298,
+      "spend": 466,
+      "age": 53
+    },
+    {
+      "x": -0.772,
+      "y": 0.899,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 58712,
+      "spend": 115,
+      "age": 56
+    },
+    {
+      "x": 2.056,
+      "y": 1.079,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 84503,
+      "spend": 943,
+      "age": 55
+    },
+    {
+      "x": -0.152,
+      "y": -0.681,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 70831,
+      "spend": 362,
+      "age": 38
+    },
+    {
+      "x": -0.242,
+      "y": 0.686,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 59687,
+      "spend": 424,
+      "age": 42
+    },
+    {
+      "x": -0.394,
+      "y": -1.939,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 35944,
+      "spend": 493,
+      "age": 65
+    },
+    {
+      "x": 2.085,
+      "y": -0.783,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 75747,
+      "spend": 1100,
+      "age": 55
+    },
+    {
+      "x": 0.89,
+      "y": 0.993,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 78717,
+      "spend": 720,
+      "age": 38
+    },
+    {
+      "x": 1.795,
+      "y": 1.635,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 91561,
+      "spend": 798,
+      "age": 49
+    },
+    {
+      "x": 2.495,
+      "y": -1.226,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 78325,
+      "spend": 1236,
+      "age": 53
+    },
+    {
+      "x": -2.244,
+      "y": -0.118,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 17431,
+      "spend": 180,
+      "age": 46
+    },
+    {
+      "x": 0.846,
+      "y": 1.097,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 56457,
+      "spend": 802,
+      "age": 55
+    },
+    {
+      "x": -1.065,
+      "y": 0.538,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 57428,
+      "spend": 215,
+      "age": 35
+    },
+    {
+      "x": -2.47,
+      "y": -0.042,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 16080,
+      "spend": 266,
+      "age": 33
+    },
+    {
+      "x": -0.07,
+      "y": -1.677,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 49824,
+      "spend": 708,
+      "age": 41
+    },
+    {
+      "x": -0.31,
+      "y": 0.749,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 46341,
+      "spend": 431,
+      "age": 61
+    },
+    {
+      "x": -1.784,
+      "y": 1.021,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 41972,
+      "spend": 209,
+      "age": 29
+    },
+    {
+      "x": -0.182,
+      "y": 1.429,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 48313,
+      "spend": 537,
+      "age": 55
+    },
+    {
+      "x": -0.418,
+      "y": -0.138,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 53936,
+      "spend": 507,
+      "age": 42
+    },
+    {
+      "x": 0.986,
+      "y": 0.189,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 75413,
+      "spend": 819,
+      "age": 39
+    },
+    {
+      "x": -0.04,
+      "y": -0.322,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 60388,
+      "spend": 644,
+      "age": 35
+    },
+    {
+      "x": -1.453,
+      "y": -0.628,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 39879,
+      "spend": 480,
+      "age": 22
+    },
+    {
+      "x": 1.202,
+      "y": -0.069,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 87370,
+      "spend": 617,
+      "age": 44
+    },
+    {
+      "x": -0.686,
+      "y": -1.334,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 43094,
+      "spend": 426,
+      "age": 54
+    },
+    {
+      "x": -0.993,
+      "y": -0.358,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 54338,
+      "spend": 232,
+      "age": 44
+    },
+    {
+      "x": -0.438,
+      "y": 0.471,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 43526,
+      "spend": 549,
+      "age": 45
+    },
+    {
+      "x": 0.813,
+      "y": 0.913,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 62878,
+      "spend": 851,
+      "age": 42
+    },
+    {
+      "x": 0.512,
+      "y": 0.596,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 65575,
+      "spend": 633,
+      "age": 45
+    },
+    {
+      "x": 0.774,
+      "y": 1.334,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 67282,
+      "spend": 787,
+      "age": 38
+    },
+    {
+      "x": -1.277,
+      "y": -0.249,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 40208,
+      "spend": 284,
+      "age": 47
+    },
+    {
+      "x": -1.625,
+      "y": -0.727,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 32417,
+      "spend": 396,
+      "age": 33
+    },
+    {
+      "x": 0.692,
+      "y": -0.795,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 62102,
+      "spend": 777,
+      "age": 48
+    },
+    {
+      "x": -0.28,
+      "y": -0.476,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 46161,
+      "spend": 498,
+      "age": 55
+    },
+    {
+      "x": 0.978,
+      "y": -0.249,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 81672,
+      "spend": 567,
+      "age": 52
+    },
+    {
+      "x": 0.171,
+      "y": -1.554,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 56750,
+      "spend": 800,
+      "age": 36
+    },
+    {
+      "x": 0.234,
+      "y": -1.294,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 67015,
+      "spend": 609,
+      "age": 38
+    },
+    {
+      "x": 0.766,
+      "y": 1.416,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 60147,
+      "spend": 696,
+      "age": 60
+    },
+    {
+      "x": -0.17,
+      "y": -1.474,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 48260,
+      "spend": 624,
+      "age": 50
+    },
+    {
+      "x": 0.811,
+      "y": -2.095,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 68534,
+      "spend": 542,
+      "age": 62
+    },
+    {
+      "x": -0.494,
+      "y": -0.884,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 42634,
+      "spend": 722,
+      "age": 33
+    },
+    {
+      "x": -1.466,
+      "y": 0.729,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 44715,
+      "spend": 327,
+      "age": 25
+    },
+    {
+      "x": -0.973,
+      "y": 1.086,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 40351,
+      "spend": 354,
+      "age": 51
+    },
+    {
+      "x": -1.353,
+      "y": -0.621,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 40589,
+      "spend": 388,
+      "age": 32
+    },
+    {
+      "x": 0.138,
+      "y": -0.809,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 56851,
+      "spend": 461,
+      "age": 60
+    },
+    {
+      "x": -1.102,
+      "y": -0.983,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 43715,
+      "spend": 249,
+      "age": 48
+    },
+    {
+      "x": -0.335,
+      "y": -0.368,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 50050,
+      "spend": 506,
+      "age": 47
+    },
+    {
+      "x": 0.735,
+      "y": -0.245,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 75140,
+      "spend": 637,
+      "age": 46
+    },
+    {
+      "x": 1.53,
+      "y": -0.35,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 63991,
+      "spend": 875,
+      "age": 70
+    },
+    {
+      "x": 0.495,
+      "y": -1.15,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 88862,
+      "spend": 237,
+      "age": 49
+    },
+    {
+      "x": 0.158,
+      "y": 0.941,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 49686,
+      "spend": 610,
+      "age": 57
+    },
+    {
+      "x": 0.754,
+      "y": -1.789,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 83066,
+      "spend": 337,
+      "age": 61
+    },
+    {
+      "x": -1.907,
+      "y": 0.616,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 40953,
+      "spend": 194,
+      "age": 24
+    },
+    {
+      "x": -0.242,
+      "y": -1.685,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 56463,
+      "spend": 522,
+      "age": 44
+    },
+    {
+      "x": -1.041,
+      "y": 0.499,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 49500,
+      "spend": 345,
+      "age": 33
+    },
+    {
+      "x": 1.167,
+      "y": 0.355,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 85432,
+      "spend": 607,
+      "age": 47
+    },
+    {
+      "x": -0.555,
+      "y": 0.594,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 58980,
+      "spend": 356,
+      "age": 37
+    },
+    {
+      "x": -0.775,
+      "y": 0.181,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 39744,
+      "spend": 403,
+      "age": 53
+    },
+    {
+      "x": 0.046,
+      "y": -1.065,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 68161,
+      "spend": 441,
+      "age": 48
+    },
+    {
+      "x": -1.208,
+      "y": 2.054,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 44887,
+      "spend": 180,
+      "age": 46
+    },
+    {
+      "x": 1.691,
+      "y": 0.85,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 88543,
+      "spend": 810,
+      "age": 45
+    },
+    {
+      "x": 2.169,
+      "y": 0.791,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 98426,
+      "spend": 933,
+      "age": 42
+    },
+    {
+      "x": -0.906,
+      "y": 0.482,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 32730,
+      "spend": 325,
+      "age": 65
+    },
+    {
+      "x": -0.93,
+      "y": 0.441,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 44478,
+      "spend": 227,
+      "age": 54
+    },
+    {
+      "x": 1.65,
+      "y": 0.626,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 85938,
+      "spend": 868,
+      "age": 40
+    },
+    {
+      "x": -0.629,
+      "y": 0.473,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 36323,
+      "spend": 727,
+      "age": 39
+    },
+    {
+      "x": -0.638,
+      "y": -2.095,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 61547,
+      "spend": 215,
+      "age": 45
+    },
+    {
+      "x": 2.843,
+      "y": -1.388,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 96024,
+      "spend": 1161,
+      "age": 54
+    },
+    {
+      "x": 1.04,
+      "y": 0.106,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 60301,
+      "spend": 1042,
+      "age": 42
+    },
+    {
+      "x": 0.233,
+      "y": -1.146,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 70975,
+      "spend": 518,
+      "age": 43
+    },
+    {
+      "x": -0.062,
+      "y": 0.303,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 56322,
+      "spend": 608,
+      "age": 40
+    },
+    {
+      "x": -0.512,
+      "y": -1.782,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 45425,
+      "spend": 600,
+      "age": 41
+    },
+    {
+      "x": 1.848,
+      "y": 0.252,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 82270,
+      "spend": 1048,
+      "age": 44
+    },
+    {
+      "x": -0.478,
+      "y": -0.714,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 65921,
+      "spend": 275,
+      "age": 43
+    },
+    {
+      "x": 1.017,
+      "y": -0.061,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 57878,
+      "spend": 710,
+      "age": 69
+    },
+    {
+      "x": -1.418,
+      "y": 0.784,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 35030,
+      "spend": 419,
+      "age": 32
+    },
+    {
+      "x": 3.191,
+      "y": -1.331,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 96828,
+      "spend": 1332,
+      "age": 51
+    },
+    {
+      "x": -1.41,
+      "y": -0.109,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 25022,
+      "spend": 361,
+      "age": 52
+    },
+    {
+      "x": -0.275,
+      "y": -1.234,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 42917,
+      "spend": 529,
+      "age": 60
+    },
+    {
+      "x": 2.664,
+      "y": 1.003,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 94639,
+      "spend": 1079,
+      "age": 52
+    },
+    {
+      "x": -1.012,
+      "y": 1.528,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 55192,
+      "spend": 305,
+      "age": 31
+    },
+    {
+      "x": 1.201,
+      "y": -1.209,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 85575,
+      "spend": 758,
+      "age": 35
+    },
+    {
+      "x": -1.71,
+      "y": 1.072,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 50383,
+      "spend": 104,
+      "age": 26
+    },
+    {
+      "x": -0.586,
+      "y": -0.857,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 41968,
+      "spend": 391,
+      "age": 58
+    },
+    {
+      "x": 1.12,
+      "y": -0.981,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 66648,
+      "spend": 917,
+      "age": 48
+    },
+    {
+      "x": 1.39,
+      "y": -1.273,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 87124,
+      "spend": 746,
+      "age": 42
+    },
+    {
+      "x": -1.595,
+      "y": 0.82,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 39526,
+      "spend": 270,
+      "age": 34
+    },
+    {
+      "x": 1.235,
+      "y": -0.557,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 90184,
+      "spend": 456,
+      "age": 58
+    },
+    {
+      "x": 1.007,
+      "y": 2.406,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 56489,
+      "spend": 810,
+      "age": 60
+    },
+    {
+      "x": -1.662,
+      "y": 1.171,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 38037,
+      "spend": 266,
+      "age": 32
+    },
+    {
+      "x": 0.108,
+      "y": -0.067,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 64714,
+      "spend": 484,
+      "age": 44
+    },
+    {
+      "x": -0.89,
+      "y": -2.048,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 43031,
+      "spend": 374,
+      "age": 52
+    },
+    {
+      "x": 2.346,
+      "y": -1.062,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 77051,
+      "spend": 1305,
+      "age": 50
+    },
+    {
+      "x": -0.013,
+      "y": 1.793,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 60568,
+      "spend": 520,
+      "age": 43
+    },
+    {
+      "x": 0.09,
+      "y": -1.151,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 65986,
+      "spend": 448,
+      "age": 47
+    },
+    {
+      "x": -0.039,
+      "y": -0.883,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 64173,
+      "spend": 439,
+      "age": 44
+    },
+    {
+      "x": -1.752,
+      "y": 0.926,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 35848,
+      "spend": 327,
+      "age": 25
+    },
+    {
+      "x": 1.794,
+      "y": 0.127,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 93492,
+      "spend": 837,
+      "age": 39
+    },
+    {
+      "x": -1.324,
+      "y": 1.258,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 42502,
+      "spend": 396,
+      "age": 30
+    },
+    {
+      "x": 0.157,
+      "y": 1.465,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 50173,
+      "spend": 558,
+      "age": 64
+    },
+    {
+      "x": -0.735,
+      "y": -0.176,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 51279,
+      "spend": 342,
+      "age": 42
+    },
+    {
+      "x": -0.311,
+      "y": 0.044,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 51819,
+      "spend": 514,
+      "age": 43
+    },
+    {
+      "x": 0.907,
+      "y": -1.335,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 68601,
+      "spend": 773,
+      "age": 50
+    },
+    {
+      "x": -0.091,
+      "y": -0.954,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 52840,
+      "spend": 712,
+      "age": 34
+    },
+    {
+      "x": -1.829,
+      "y": -0.159,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 32489,
+      "spend": 182,
+      "age": 44
+    },
+    {
+      "x": 1.376,
+      "y": 0.864,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 75728,
+      "spend": 951,
+      "age": 38
+    },
+    {
+      "x": -0.695,
+      "y": 0.653,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 54096,
+      "spend": 321,
+      "age": 43
+    },
+    {
+      "x": -0.136,
+      "y": 0.292,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 50913,
+      "spend": 465,
+      "age": 59
+    },
+    {
+      "x": -0.012,
+      "y": -0.795,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 49256,
+      "spend": 640,
+      "age": 53
+    },
+    {
+      "x": 0.623,
+      "y": 0.251,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 70460,
+      "spend": 530,
+      "age": 53
+    },
+    {
+      "x": 4.207,
+      "y": -0.371,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 95016,
+      "spend": 1879,
+      "age": 44
+    },
+    {
+      "x": 0.84,
+      "y": -1.129,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 78447,
+      "spend": 694,
+      "age": 38
+    },
+    {
+      "x": -1.698,
+      "y": 0.247,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 32923,
+      "spend": 398,
+      "age": 28
+    },
+    {
+      "x": -0.574,
+      "y": 0.507,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 45998,
+      "spend": 455,
+      "age": 51
+    },
+    {
+      "x": -0.068,
+      "y": 1.54,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 46233,
+      "spend": 565,
+      "age": 57
+    },
+    {
+      "x": -0.87,
+      "y": -0.485,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 49574,
+      "spend": 175,
+      "age": 57
+    },
+    {
+      "x": 0.806,
+      "y": -0.08,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 78758,
+      "spend": 641,
+      "age": 44
+    },
+    {
+      "x": -1.375,
+      "y": -1.431,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 39610,
+      "spend": 144,
+      "age": 57
+    },
+    {
+      "x": -1.301,
+      "y": -0.715,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 36526,
+      "spend": 487,
+      "age": 34
+    },
+    {
+      "x": -0.526,
+      "y": 1.281,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 49217,
+      "spend": 289,
+      "age": 63
+    },
+    {
+      "x": -0.739,
+      "y": -0.338,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 40476,
+      "spend": 436,
+      "age": 53
+    },
+    {
+      "x": -0.995,
+      "y": 0.632,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 45128,
+      "spend": 229,
+      "age": 54
+    },
+    {
+      "x": -1.973,
+      "y": 2.553,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 29289,
+      "spend": 296,
+      "age": 27
+    },
+    {
+      "x": -0.008,
+      "y": 0.666,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 66445,
+      "spend": 461,
+      "age": 41
+    },
+    {
+      "x": -1.643,
+      "y": -0.265,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 35696,
+      "spend": 331,
+      "age": 34
+    },
+    {
+      "x": -0.637,
+      "y": 0.205,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 49002,
+      "spend": 202,
+      "age": 63
+    },
+    {
+      "x": 0.345,
+      "y": 0.035,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 60373,
+      "spend": 625,
+      "age": 49
+    },
+    {
+      "x": -0.175,
+      "y": 1.053,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 54223,
+      "spend": 809,
+      "age": 23
+    },
+    {
+      "x": 1.939,
+      "y": -1.691,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 108098,
+      "spend": 572,
+      "age": 54
+    },
+    {
+      "x": 1.211,
+      "y": -0.135,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 67743,
+      "spend": 804,
+      "age": 59
+    },
+    {
+      "x": -2.164,
+      "y": 0.04,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 24230,
+      "spend": 272,
+      "age": 33
+    },
+    {
+      "x": 1.487,
+      "y": 0.904,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 78634,
+      "spend": 819,
+      "age": 50
+    },
+    {
+      "x": 0.754,
+      "y": 0.004,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 62707,
+      "spend": 715,
+      "age": 54
+    },
+    {
+      "x": -1.792,
+      "y": -0.604,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 38908,
+      "spend": 107,
+      "age": 41
+    },
+    {
+      "x": -1.821,
+      "y": -0.449,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 33626,
+      "spend": 397,
+      "age": 24
+    },
+    {
+      "x": -1.73,
+      "y": -0.455,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 40435,
+      "spend": 267,
+      "age": 28
+    },
+    {
+      "x": -0.051,
+      "y": 0.087,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 52537,
+      "spend": 490,
+      "age": 56
+    },
+    {
+      "x": -0.597,
+      "y": -0.189,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 48191,
+      "spend": 285,
+      "age": 63
+    },
+    {
+      "x": 1.455,
+      "y": 1.068,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 78951,
+      "spend": 912,
+      "age": 44
+    },
+    {
+      "x": 0.232,
+      "y": 0.484,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 70894,
+      "spend": 553,
+      "age": 36
+    },
+    {
+      "x": -0.021,
+      "y": 0.871,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 55210,
+      "spend": 353,
+      "age": 63
+    },
+    {
+      "x": -1.848,
+      "y": -1.544,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 30070,
+      "spend": 274,
+      "age": 36
+    },
+    {
+      "x": -0.699,
+      "y": 0.436,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 53003,
+      "spend": 388,
+      "age": 44
+    },
+    {
+      "x": -0.861,
+      "y": 1.023,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 43504,
+      "spend": 279,
+      "age": 58
+    },
+    {
+      "x": 0.319,
+      "y": -1.466,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 56227,
+      "spend": 521,
+      "age": 64
+    },
+    {
+      "x": -0.471,
+      "y": 0.585,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 58163,
+      "spend": 415,
+      "age": 39
+    },
+    {
+      "x": 0.791,
+      "y": -0.007,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 57704,
+      "spend": 783,
+      "age": 56
+    },
+    {
+      "x": -1.32,
+      "y": 1.566,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 29891,
+      "spend": 467,
+      "age": 41
+    },
+    {
+      "x": 1.38,
+      "y": 0.277,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 85132,
+      "spend": 655,
+      "age": 51
+    },
+    {
+      "x": 0.322,
+      "y": 0.413,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 60722,
+      "spend": 560,
+      "age": 52
+    },
+    {
+      "x": 0.091,
+      "y": -0.44,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 56789,
+      "spend": 664,
+      "age": 44
+    },
+    {
+      "x": -1.382,
+      "y": -1.659,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 36860,
+      "spend": 395,
+      "age": 35
+    },
+    {
+      "x": -0.688,
+      "y": 0.08,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 61920,
+      "spend": 174,
+      "age": 47
+    },
+    {
+      "x": -1.286,
+      "y": 0.213,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 37699,
+      "spend": 225,
+      "age": 50
+    },
+    {
+      "x": 1.053,
+      "y": 0.235,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 68992,
+      "spend": 834,
+      "age": 48
+    },
+    {
+      "x": 0.155,
+      "y": -0.383,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 63258,
+      "spend": 557,
+      "age": 45
+    },
+    {
+      "x": -1.69,
+      "y": 2.102,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 39188,
+      "spend": 191,
+      "age": 38
+    },
+    {
+      "x": -0.481,
+      "y": 0.539,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 41032,
+      "spend": 512,
+      "age": 53
+    },
+    {
+      "x": 2.09,
+      "y": -0.096,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 89560,
+      "spend": 1055,
+      "age": 39
+    },
+    {
+      "x": -0.845,
+      "y": -1.252,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 42438,
+      "spend": 412,
+      "age": 50
+    },
+    {
+      "x": -1.47,
+      "y": 0.124,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 40128,
+      "spend": 456,
+      "age": 21
+    },
+    {
+      "x": 3.842,
+      "y": 0.84,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 91898,
+      "spend": 1626,
+      "age": 55
+    },
+    {
+      "x": -0.896,
+      "y": 1.223,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 52066,
+      "spend": 441,
+      "age": 28
+    },
+    {
+      "x": -1.223,
+      "y": -1.451,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 36463,
+      "spend": 373,
+      "age": 42
+    },
+    {
+      "x": -0.864,
+      "y": 0.264,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 29340,
+      "spend": 434,
+      "age": 62
+    },
+    {
+      "x": 0.516,
+      "y": 0.269,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 65583,
+      "spend": 669,
+      "age": 48
+    },
+    {
+      "x": 0.264,
+      "y": -0.706,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 52162,
+      "spend": 537,
+      "age": 64
+    },
+    {
+      "x": -0.651,
+      "y": 1.534,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 38122,
+      "spend": 409,
+      "age": 61
+    },
+    {
+      "x": 0.151,
+      "y": 1.367,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 68818,
+      "spend": 426,
+      "age": 49
+    },
+    {
+      "x": 1.884,
+      "y": 1.302,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 106964,
+      "spend": 774,
+      "age": 35
+    },
+    {
+      "x": 0.493,
+      "y": 0.118,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 51637,
+      "spend": 879,
+      "age": 45
+    },
+    {
+      "x": -1.003,
+      "y": 1.609,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 50096,
+      "spend": 170,
+      "age": 48
+    },
+    {
+      "x": -1.567,
+      "y": -1.246,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 40003,
+      "spend": 210,
+      "age": 40
+    },
+    {
+      "x": 0.177,
+      "y": -0.553,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 50315,
+      "spend": 734,
+      "age": 48
+    },
+    {
+      "x": 0.209,
+      "y": 0.647,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 69386,
+      "spend": 575,
+      "age": 38
+    },
+    {
+      "x": 1.443,
+      "y": 0.384,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 73690,
+      "spend": 1018,
+      "age": 38
+    },
+    {
+      "x": 0.014,
+      "y": 0.315,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 48937,
+      "spend": 411,
+      "age": 69
+    },
+    {
+      "x": 1.498,
+      "y": -2.246,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 108571,
+      "spend": 359,
+      "age": 51
+    },
+    {
+      "x": -1.662,
+      "y": -0.695,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 35981,
+      "spend": 281,
+      "age": 39
+    },
+    {
+      "x": -0.645,
+      "y": -0.338,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 55468,
+      "spend": 316,
+      "age": 44
+    },
+    {
+      "x": -0.001,
+      "y": -0.72,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 63501,
+      "spend": 557,
+      "age": 40
+    },
+    {
+      "x": 1.084,
+      "y": 0.127,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 72807,
+      "spend": 701,
+      "age": 52
+    },
+    {
+      "x": 0.983,
+      "y": 0.449,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 73957,
+      "spend": 491,
+      "age": 65
+    },
+    {
+      "x": -0.042,
+      "y": 0.266,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 62169,
+      "spend": 606,
+      "age": 35
+    },
+    {
+      "x": 1.111,
+      "y": 0.199,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 69188,
+      "spend": 759,
+      "age": 58
+    },
+    {
+      "x": 1.599,
+      "y": -0.283,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 95005,
+      "spend": 705,
+      "age": 44
+    },
+    {
+      "x": -0.554,
+      "y": -1.924,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 48749,
+      "spend": 365,
+      "age": 53
+    },
+    {
+      "x": 1.088,
+      "y": 1.656,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 65552,
+      "spend": 584,
+      "age": 73
+    },
+    {
+      "x": -0.904,
+      "y": -1.051,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 44998,
+      "spend": 556,
+      "age": 26
+    },
+    {
+      "x": -0.936,
+      "y": -1.41,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 34990,
+      "spend": 414,
+      "age": 53
+    },
+    {
+      "x": 1.537,
+      "y": -0.093,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 55132,
+      "spend": 967,
+      "age": 71
+    },
+    {
+      "x": -1.452,
+      "y": 1.799,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 48555,
+      "spend": 293,
+      "age": 26
+    },
+    {
+      "x": -2.522,
+      "y": 2.456,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 24351,
+      "spend": 153,
+      "age": 28
+    },
+    {
+      "x": 0.151,
+      "y": -1.164,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 66579,
+      "spend": 506,
+      "age": 45
+    },
+    {
+      "x": -0.007,
+      "y": 0.478,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 72588,
+      "spend": 294,
+      "age": 46
+    },
+    {
+      "x": 0.021,
+      "y": -0.033,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 71749,
+      "spend": 357,
+      "age": 46
+    },
+    {
+      "x": 0.723,
+      "y": -0.343,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 67483,
+      "spend": 711,
+      "age": 49
+    },
+    {
+      "x": -0.262,
+      "y": 0.242,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 50204,
+      "spend": 466,
+      "age": 52
+    },
+    {
+      "x": -0.458,
+      "y": -0.302,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 57817,
+      "spend": 645,
+      "age": 22
+    },
+    {
+      "x": -0.549,
+      "y": -1.182,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 45265,
+      "spend": 396,
+      "age": 58
+    },
+    {
+      "x": 0.007,
+      "y": 1.393,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 54247,
+      "spend": 570,
+      "age": 46
+    },
+    {
+      "x": -2.696,
+      "y": 1.461,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 12503,
+      "spend": 73,
+      "age": 45
+    },
+    {
+      "x": -1.574,
+      "y": 0.431,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 36817,
+      "spend": 411,
+      "age": 27
+    },
+    {
+      "x": -0.652,
+      "y": -0.699,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 53217,
+      "spend": 351,
+      "age": 44
+    },
+    {
+      "x": -0.728,
+      "y": -0.715,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 47895,
+      "spend": 203,
+      "age": 62
+    },
+    {
+      "x": 0.447,
+      "y": -0.27,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 71197,
+      "spend": 652,
+      "age": 40
+    },
+    {
+      "x": -0.281,
+      "y": -0.506,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 60418,
+      "spend": 347,
+      "age": 46
+    },
+    {
+      "x": -1.272,
+      "y": 0.643,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 43957,
+      "spend": 424,
+      "age": 23
+    },
+    {
+      "x": -0.162,
+      "y": -0.898,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 53593,
+      "spend": 534,
+      "age": 47
+    },
+    {
+      "x": 1.939,
+      "y": 1.29,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 93283,
+      "spend": 907,
+      "age": 43
+    },
+    {
+      "x": -0.111,
+      "y": -2.745,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 60826,
+      "spend": 587,
+      "age": 38
+    },
+    {
+      "x": 0.461,
+      "y": -0.958,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 47930,
+      "spend": 854,
+      "age": 50
+    },
+    {
+      "x": -1.334,
+      "y": -0.924,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 39432,
+      "spend": 223,
+      "age": 52
+    },
+    {
+      "x": -1.528,
+      "y": -0.173,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 23193,
+      "spend": 377,
+      "age": 51
+    },
+    {
+      "x": -0.034,
+      "y": -0.214,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 67797,
+      "spend": 291,
+      "age": 58
+    },
+    {
+      "x": -0.555,
+      "y": 1.055,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 49539,
+      "spend": 510,
+      "age": 40
+    },
+    {
+      "x": -1.589,
+      "y": 1.267,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 29486,
+      "spend": 573,
+      "age": 19
+    },
+    {
+      "x": 2.279,
+      "y": -1.028,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 88821,
+      "spend": 1169,
+      "age": 40
+    },
+    {
+      "x": 1.897,
+      "y": 1.05,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 63361,
+      "spend": 1084,
+      "age": 65
+    },
+    {
+      "x": 0.63,
+      "y": 0.493,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 71129,
+      "spend": 664,
+      "age": 41
+    },
+    {
+      "x": -0.804,
+      "y": 0.555,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 42056,
+      "spend": 490,
+      "age": 41
+    },
+    {
+      "x": -0.185,
+      "y": -0.326,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 46521,
+      "spend": 574,
+      "age": 56
+    },
+    {
+      "x": 1.597,
+      "y": 0.905,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 79303,
+      "spend": 850,
+      "age": 53
+    },
+    {
+      "x": 0.784,
+      "y": 0.664,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 49333,
+      "spend": 850,
+      "age": 62
+    },
+    {
+      "x": -1.932,
+      "y": 0.24,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 33018,
+      "spend": 326,
+      "age": 22
+    },
+    {
+      "x": 2.987,
+      "y": 1.21,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 92264,
+      "spend": 1233,
+      "age": 52
+    },
+    {
+      "x": 2.342,
+      "y": 1.507,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 80775,
+      "spend": 961,
+      "age": 66
+    },
+    {
+      "x": -0.268,
+      "y": -0.296,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 35716,
+      "spend": 648,
+      "age": 55
+    },
+    {
+      "x": 0.53,
+      "y": 1.132,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 66392,
+      "spend": 551,
+      "age": 56
+    },
+    {
+      "x": -0.34,
+      "y": -0.032,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 45212,
+      "spend": 445,
+      "age": 63
+    },
+    {
+      "x": 0.919,
+      "y": 0.496,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 93888,
+      "spend": 355,
+      "age": 49
+    },
+    {
+      "x": 0.065,
+      "y": -0.728,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 68574,
+      "spend": 275,
+      "age": 59
+    },
+    {
+      "x": 0.01,
+      "y": 0.657,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 74511,
+      "spend": 379,
+      "age": 37
+    },
+    {
+      "x": -0.228,
+      "y": -1.323,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 60658,
+      "spend": 292,
+      "age": 58
+    },
+    {
+      "x": -0.008,
+      "y": -1.128,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 54208,
+      "spend": 672,
+      "age": 44
+    },
+    {
+      "x": 1.561,
+      "y": 1.223,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 75402,
+      "spend": 883,
+      "age": 55
+    },
+    {
+      "x": 0.558,
+      "y": -1.55,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 69780,
+      "spend": 503,
+      "age": 56
+    },
+    {
+      "x": 1.211,
+      "y": -0.078,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 75867,
+      "spend": 926,
+      "age": 35
+    },
+    {
+      "x": -0.147,
+      "y": 1.544,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 66246,
+      "spend": 417,
+      "age": 35
+    },
+    {
+      "x": 0.821,
+      "y": -1.62,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 59695,
+      "spend": 879,
+      "age": 47
+    },
+    {
+      "x": -0.851,
+      "y": 0.342,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 45684,
+      "spend": 321,
+      "age": 53
+    },
+    {
+      "x": 0.216,
+      "y": 0.91,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 80957,
+      "spend": 283,
+      "age": 42
+    },
+    {
+      "x": 0.124,
+      "y": 0.075,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 59853,
+      "spend": 645,
+      "age": 39
+    },
+    {
+      "x": 0.089,
+      "y": -0.008,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 87885,
+      "spend": 270,
+      "age": 36
+    },
+    {
+      "x": 0.245,
+      "y": -0.664,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 55245,
+      "spend": 592,
+      "age": 61
+    },
+    {
+      "x": 0.808,
+      "y": -1.311,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 65391,
+      "spend": 894,
+      "age": 41
+    },
+    {
+      "x": -0.271,
+      "y": 0.161,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 54473,
+      "spend": 403,
+      "age": 55
+    },
+    {
+      "x": 1.389,
+      "y": -2.368,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 72438,
+      "spend": 838,
+      "age": 57
+    },
+    {
+      "x": -0.629,
+      "y": -1.596,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 61840,
+      "spend": 525,
+      "age": 18
+    },
+    {
+      "x": -0.718,
+      "y": -1.788,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 49577,
+      "spend": 608,
+      "age": 30
+    },
+    {
+      "x": 0.176,
+      "y": 0.826,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 67780,
+      "spend": 467,
+      "age": 48
+    },
+    {
+      "x": 1.569,
+      "y": -0.202,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 62726,
+      "spend": 1049,
+      "age": 54
+    },
+    {
+      "x": -0.823,
+      "y": -0.37,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 43350,
+      "spend": 595,
+      "age": 29
+    },
+    {
+      "x": -0.152,
+      "y": -0.441,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 64170,
+      "spend": 342,
+      "age": 51
+    },
+    {
+      "x": -0.39,
+      "y": 0.153,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 51372,
+      "spend": 530,
+      "age": 43
+    },
+    {
+      "x": -1.28,
+      "y": -0.908,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 38094,
+      "spend": 526,
+      "age": 28
+    },
+    {
+      "x": 2.502,
+      "y": -0.315,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 75389,
+      "spend": 1236,
+      "age": 62
+    },
+    {
+      "x": -1.12,
+      "y": -1.171,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 41260,
+      "spend": 412,
+      "age": 37
+    },
+    {
+      "x": -0.248,
+      "y": -0.162,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 54780,
+      "spend": 554,
+      "age": 42
+    },
+    {
+      "x": -1.385,
+      "y": -0.44,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 43361,
+      "spend": 435,
+      "age": 27
+    },
+    {
+      "x": -0.905,
+      "y": -0.687,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 48232,
+      "spend": 445,
+      "age": 33
+    },
+    {
+      "x": -0.138,
+      "y": 2.397,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 71632,
+      "spend": 353,
+      "age": 36
+    },
+    {
+      "x": 2.778,
+      "y": 1.473,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 90488,
+      "spend": 1336,
+      "age": 43
+    },
+    {
+      "x": 0.922,
+      "y": -0.022,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 57546,
+      "spend": 723,
+      "age": 69
+    },
+    {
+      "x": -0.239,
+      "y": -0.765,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 58081,
+      "spend": 469,
+      "age": 46
+    },
+    {
+      "x": 1.566,
+      "y": 1.276,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 83470,
+      "spend": 979,
+      "age": 36
+    },
+    {
+      "x": -2.141,
+      "y": 1.249,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 39194,
+      "spend": 191,
+      "age": 20
+    },
+    {
+      "x": 0.018,
+      "y": 1.303,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 47129,
+      "spend": 713,
+      "age": 48
+    },
+    {
+      "x": -2.096,
+      "y": -0.834,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 19944,
+      "spend": 276,
+      "age": 42
+    },
+    {
+      "x": 0.0,
+      "y": 1.023,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 55630,
+      "spend": 649,
+      "age": 44
+    },
+    {
+      "x": -1.261,
+      "y": 0.093,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 33494,
+      "spend": 246,
+      "age": 56
+    },
+    {
+      "x": 1.555,
+      "y": 0.886,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 77256,
+      "spend": 772,
+      "age": 59
+    },
+    {
+      "x": -0.271,
+      "y": -1.655,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 66115,
+      "spend": 264,
+      "age": 55
+    },
+    {
+      "x": 1.351,
+      "y": -0.401,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 59821,
+      "spend": 1037,
+      "age": 51
+    },
+    {
+      "x": -1.004,
+      "y": -1.598,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 44914,
+      "spend": 397,
+      "age": 40
+    },
+    {
+      "x": -1.513,
+      "y": 0.072,
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "income": 33877,
+      "spend": 429,
+      "age": 32
+    },
+    {
+      "x": 3.073,
+      "y": 0.991,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 96474,
+      "spend": 1358,
+      "age": 42
+    },
+    {
+      "x": -0.751,
+      "y": 0.067,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 46215,
+      "spend": 345,
+      "age": 53
+    },
+    {
+      "x": -0.262,
+      "y": 0.421,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 71688,
+      "spend": 316,
+      "age": 39
+    },
+    {
+      "x": 0.213,
+      "y": 0.889,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 65389,
+      "spend": 449,
+      "age": 54
+    },
+    {
+      "x": 0.289,
+      "y": -0.934,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 75033,
+      "spend": 405,
+      "age": 50
+    },
+    {
+      "x": 1.124,
+      "y": -2.175,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 66509,
+      "spend": 723,
+      "age": 62
+    },
+    {
+      "x": -0.405,
+      "y": 0.478,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 45373,
+      "spend": 496,
+      "age": 53
+    },
+    {
+      "x": -0.559,
+      "y": 0.702,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 49677,
+      "spend": 367,
+      "age": 53
+    },
+    {
+      "x": -0.035,
+      "y": -0.599,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 77882,
+      "spend": 227,
+      "age": 47
+    },
+    {
+      "x": -1.375,
+      "y": 2.086,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 31186,
+      "spend": 270,
+      "age": 53
+    },
+    {
+      "x": -1.051,
+      "y": 0.602,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 37160,
+      "spend": 365,
+      "age": 48
+    },
+    {
+      "x": 1.721,
+      "y": 2.123,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 73566,
+      "spend": 994,
+      "age": 52
+    },
+    {
+      "x": 1.742,
+      "y": 0.063,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 79783,
+      "spend": 980,
+      "age": 43
+    },
+    {
+      "x": 2.28,
+      "y": 0.084,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 88436,
+      "spend": 1135,
+      "age": 42
+    },
+    {
+      "x": 0.846,
+      "y": -0.189,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 60887,
+      "spend": 875,
+      "age": 45
+    },
+    {
+      "x": -0.795,
+      "y": 1.268,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 38115,
+      "spend": 282,
+      "age": 62
+    },
+    {
+      "x": -1.17,
+      "y": 0.013,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 38968,
+      "spend": 348,
+      "age": 48
+    },
+    {
+      "x": 2.309,
+      "y": 0.519,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 79689,
+      "spend": 1120,
+      "age": 54
+    },
+    {
+      "x": 2.909,
+      "y": -0.167,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 91051,
+      "spend": 1308,
+      "age": 48
+    },
+    {
+      "x": -1.135,
+      "y": -1.201,
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "income": 43157,
+      "spend": 231,
+      "age": 52
+    },
+    {
+      "x": 2.0,
+      "y": -0.904,
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "income": 78783,
+      "spend": 1194,
+      "age": 42
+    },
+    {
+      "x": 0.782,
+      "y": -0.568,
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "income": 65308,
+      "spend": 642,
+      "age": 59
+    }
+  ],
+  "cluster_profiles": [
+    {
+      "cluster_id": 2,
+      "persona": "Premium Loyalist",
+      "emoji": "\ud83d\udc51",
+      "color": "#F59E0B",
+      "description": "High income, high spend, loyal customers who respond well to premium offers.",
+      "count": 443,
+      "avg_income": 81946,
+      "avg_spend": 989,
+      "avg_age": 45.5,
+      "avg_family_size": 1.17,
+      "avg_recency": 50.0
+    },
+    {
+      "cluster_id": 3,
+      "persona": "Frugal Family",
+      "emoji": "\ud83c\udfe0",
+      "color": "#3B82F6",
+      "description": "Mid income, larger families, deal-seekers with moderate spend.",
+      "count": 578,
+      "avg_income": 58562,
+      "avg_spend": 528,
+      "avg_age": 49.5,
+      "avg_family_size": 1.07,
+      "avg_recency": 49.5
+    },
+    {
+      "cluster_id": 0,
+      "persona": "Rising Achiever",
+      "emoji": "\ud83d\ude80",
+      "color": "#10B981",
+      "description": "Younger, growing income, high web activity, price-sensitive but aspirational.",
+      "count": 664,
+      "avg_income": 55676,
+      "avg_spend": 482,
+      "avg_age": 51.7,
+      "avg_family_size": 1.0,
+      "avg_recency": 48.9
+    },
+    {
+      "cluster_id": 1,
+      "persona": "Passive Visitor",
+      "emoji": "\ud83d\udc7b",
+      "color": "#8B5CF6",
+      "description": "High web visits but low conversions; disengaged from campaigns.",
+      "count": 518,
+      "avg_income": 38760,
+      "avg_spend": 367,
+      "avg_age": 30.9,
+      "avg_family_size": 1.13,
+      "avg_recency": 49.3
+    }
+  ],
+  "spend_breakdown": [
+    {
+      "cluster": 0,
+      "persona": "Rising Achiever",
+      "MntWines": 216,
+      "MntFruits": 23,
+      "MntMeatProducts": 142,
+      "MntFishProducts": 35,
+      "MntSweetProducts": 24,
+      "MntGoldProds": 38
+    },
+    {
+      "cluster": 3,
+      "persona": "Frugal Family",
+      "MntWines": 255,
+      "MntFruits": 26,
+      "MntMeatProducts": 141,
+      "MntFishProducts": 38,
+      "MntSweetProducts": 22,
+      "MntGoldProds": 43
+    },
+    {
+      "cluster": 1,
+      "persona": "Passive Visitor",
+      "MntWines": 175,
+      "MntFruits": 16,
+      "MntMeatProducts": 105,
+      "MntFishProducts": 26,
+      "MntSweetProducts": 15,
+      "MntGoldProds": 28
+    },
+    {
+      "cluster": 2,
+      "persona": "Premium Loyalist",
+      "MntWines": 490,
+      "MntFruits": 39,
+      "MntMeatProducts": 293,
+      "MntFishProducts": 59,
+      "MntSweetProducts": 38,
+      "MntGoldProds": 68
+    }
+  ],
+  "income_distribution": {
+    "0": {
+      "persona": "Rising Achiever",
+      "color": "#10B981",
+      "bins": [
+        "0k-20k",
+        "20k-40k",
+        "40k-60k",
+        "60k-80k",
+        "80k-100k",
+        "100k-120k",
+        "120k-140k"
+      ],
+      "counts": [
+        7,
+        73,
+        322,
+        239,
+        23,
+        0,
+        0
+      ]
+    },
+    "1": {
+      "persona": "Passive Visitor",
+      "color": "#8B5CF6",
+      "bins": [
+        "0k-20k",
+        "20k-40k",
+        "40k-60k",
+        "60k-80k",
+        "80k-100k",
+        "100k-120k",
+        "120k-140k"
+      ],
+      "counts": [
+        21,
+        256,
+        233,
+        8,
+        0,
+        0,
+        0
+      ]
+    },
+    "2": {
+      "persona": "Premium Loyalist",
+      "color": "#F59E0B",
+      "bins": [
+        "0k-20k",
+        "20k-40k",
+        "40k-60k",
+        "60k-80k",
+        "80k-100k",
+        "100k-120k",
+        "120k-140k"
+      ],
+      "counts": [
+        0,
+        0,
+        15,
+        182,
+        216,
+        30,
+        0
+      ]
+    },
+    "3": {
+      "persona": "Frugal Family",
+      "color": "#3B82F6",
+      "bins": [
+        "0k-20k",
+        "20k-40k",
+        "40k-60k",
+        "60k-80k",
+        "80k-100k",
+        "100k-120k",
+        "120k-140k"
+      ],
+      "counts": [
+        3,
+        53,
+        260,
+        224,
+        36,
+        2,
+        0
+      ]
+    }
+  },
+  "channel_data": [
+    {
+      "persona": "Rising Achiever",
+      "color": "#10B981",
+      "web": 6.55,
+      "catalog": 5.17,
+      "store": 6.14,
+      "deals": 7.08
+    },
+    {
+      "persona": "Passive Visitor",
+      "color": "#8B5CF6",
+      "web": 6.71,
+      "catalog": 5.62,
+      "store": 5.98,
+      "deals": 7.02
+    },
+    {
+      "persona": "Premium Loyalist",
+      "color": "#F59E0B",
+      "web": 6.35,
+      "catalog": 5.68,
+      "store": 6.23,
+      "deals": 7.11
+    },
+    {
+      "persona": "Frugal Family",
+      "color": "#3B82F6",
+      "web": 6.25,
+      "catalog": 5.51,
+      "store": 6.11,
+      "deals": 6.82
+    }
+  ],
+  "features_used": [
+    "Age",
+    "Income",
+    "TotalSpend",
+    "TotalPurchases",
+    "Recency",
+    "FamilySize",
+    "Customer_Tenure",
+    "Education_Enc",
+    "IsCouple",
+    "NumWebVisitsMonth"
+  ]
+}
